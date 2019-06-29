@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4c70439-f6cc-437e-9590-4b15be7403c8" name="默认的" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/6.29.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/6.28.md" beforeDir="false" afterPath="$PROJECT_DIR$/6.28.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/6.29.md" beforeDir="false" afterPath="$PROJECT_DIR$/6.29.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,8 +40,8 @@
         <entry file="file://$PROJECT_DIR$/6.29.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="232">
-                <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+              <first_editor relative-caret-position="342">
+                <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
               </first_editor>
               <second_editor />
             </state>
@@ -150,12 +147,12 @@
       <workItem from="1561794117674" duration="459000" />
       <workItem from="1561794664945" duration="175000" />
       <workItem from="1561794862428" duration="396000" />
-      <workItem from="1561795282772" duration="5578000" />
+      <workItem from="1561795282772" duration="7633000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13596000" />
+    <option name="totallyTimeSpent" value="15651000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -168,6 +165,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1563" height="845" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14472823" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -237,8 +235,8 @@
     <entry file="file://$PROJECT_DIR$/6.29.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="232">
-            <caret line="27" column="37" lean-forward="true" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+          <first_editor relative-caret-position="342">
+            <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
           </first_editor>
           <second_editor />
         </state>
