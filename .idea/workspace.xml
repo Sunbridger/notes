@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4c70439-f6cc-437e-9590-4b15be7403c8" name="默认的" comment="默认的">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/a.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/koa.js" afterDir="false" />
-    </list>
+    <list default="true" id="c4c70439-f6cc-437e-9590-4b15be7403c8" name="默认的" comment="默认的" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -171,12 +168,12 @@
       <workItem from="1561794664945" duration="175000" />
       <workItem from="1561794862428" duration="396000" />
       <workItem from="1561795282772" duration="8586000" />
-      <workItem from="1561861682525" duration="4014000" />
+      <workItem from="1561861682525" duration="5411000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20618000" />
+    <option name="totallyTimeSpent" value="22015000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
