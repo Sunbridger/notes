@@ -1,12 +1,33 @@
-//koa 上手
-const Koa = require('koa');
-const app = new Koa();
-app.use(async (ctx,next)=>{
-    ctx.body = {
-        host:ctx.request.header.host
-    };
-    console.log(ctx.request.response,'response');
-});
-app.listen(3636,()=>{
-    console.log('监听3636')
-});
+let Person = {
+    say(){
+        console.log('你好人类')
+    }
+}
+let Anima = {
+    say(){
+        console.log('你好动物')
+    }
+}
+
+let a = Object.create(Person);
+a.say();  //你好人类
+
+Object.setPrototypeOf(a,Anima);
+a.say();  //你好动物
+
+
+let f = {
+    mysay(){
+        console.log(this,'this f');
+        //Object.getPrototypeOf(this).say.cal(this)
+        // return super.say()
+    }
+}
+let e = {
+    mysay:function(){
+        console.log(this,'this e');
+        //语法错误
+        // return super.say()
+    }
+};
+//二者唯一的区别是，简写方法可以使用super关键字，而普通方法不可以

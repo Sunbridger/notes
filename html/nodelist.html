@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <script>
+        /*
+        NodeList具有迭代器 所以可以用for of循环
+        */
+        let lis = document.getElementsByTagName('li');
+        for(let li of lis){
+            console.log(li,'for of');
+        }
+        for(let i=0;i<lis.length;i++){
+            console.log(lis[i],'for循环');
+        }
+        lis.forEach(el=>console.log(el,'forEach')) //lis.forEach is not a function
+    </script> 
+</body>
+</html>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4c70439-f6cc-437e-9590-4b15be7403c8" name="默认的" comment="">
-      <change beforePath="$PROJECT_DIR$/6.29.md" beforeDir="false" afterPath="$PROJECT_DIR$/6.29.md" afterDir="false" />
+    <list default="true" id="c4c70439-f6cc-437e-9590-4b15be7403c8" name="默认的" comment="默认的">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/a.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/koa.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,10 +17,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/a.js">
+        <entry file="file://$PROJECT_DIR$/js/koa.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/a.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="22" column="29" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -28,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/6.28.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="951">
+              <first_editor relative-caret-position="2046">
                 <caret line="93" column="64" selection-start-line="93" selection-start-column="64" selection-end-line="93" selection-end-column="64" />
               </first_editor>
               <second_editor />
@@ -36,12 +46,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/6.29.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="342">
-                <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+              <first_editor relative-caret-position="1980">
+                <caret line="90" selection-start-line="90" selection-end-line="90" />
               </first_editor>
               <second_editor />
             </state>
@@ -50,6 +60,13 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -57,9 +74,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$USER_HOME$/Desktop/index.html" />
-        <option value="$PROJECT_DIR$/js/a.js" />
         <option value="$PROJECT_DIR$/6.28.md" />
         <option value="$PROJECT_DIR$/6.29.md" />
+        <option value="$PROJECT_DIR$/js/a.ts" />
+        <option value="$PROJECT_DIR$/js/a.js" />
       </list>
     </option>
   </component>
@@ -70,10 +88,10 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="76" />
-    <option name="y" value="9" />
-    <option name="width" value="1751" />
-    <option name="height" value="996" />
+    <option name="x" value="75" />
+    <option name="y" value="8" />
+    <option name="width" value="1752" />
+    <option name="height" value="997" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -105,7 +123,8 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="F:\webstorm-ide\WebStorm 2018.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -119,13 +138,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="a.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="a.js" working-dir="$PROJECT_DIR$/js">
+  <component name="RunManager" selected="Node.js.a.js">
+    <configuration name="a.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/a.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
+    <configuration name="koa.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/js/koa.js" working-dir="$PROJECT_DIR$/js">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.a.js" />
+        <item itemvalue="Node.js.koa.js" />
       </list>
     </recent_temporary>
   </component>
@@ -147,12 +170,13 @@
       <workItem from="1561794117674" duration="459000" />
       <workItem from="1561794664945" duration="175000" />
       <workItem from="1561794862428" duration="396000" />
-      <workItem from="1561795282772" duration="7633000" />
+      <workItem from="1561795282772" duration="8586000" />
+      <workItem from="1561861682525" duration="4014000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15651000" />
+    <option name="totallyTimeSpent" value="20618000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -165,11 +189,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1563" height="845" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14472823" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32959327" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.2847125" />
@@ -180,9 +204,10 @@
       <window_info anchor="bottom" id="运行" order="7" weight="0.32684284" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32959327" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30575034" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.30575034" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="调试" order="12" weight="0.32959327" />
+      <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -190,6 +215,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="默认的" />
+    <option name="LAST_COMMIT_MESSAGE" value="默认的" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/.idea/js.iml">
@@ -208,13 +237,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/a.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/souche_b/finance-brace-app/.env.development">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -222,10 +244,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/koa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/6.28.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="951">
+          <first_editor relative-caret-position="2046">
             <caret line="93" column="64" selection-start-line="93" selection-start-column="64" selection-end-line="93" selection-end-column="64" />
           </first_editor>
           <second_editor />
@@ -235,10 +264,17 @@
     <entry file="file://$PROJECT_DIR$/6.29.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="342">
-            <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+          <first_editor relative-caret-position="1980">
+            <caret line="90" selection-start-line="90" selection-end-line="90" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/a.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="22" column="29" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="29" />
         </state>
       </provider>
     </entry>
