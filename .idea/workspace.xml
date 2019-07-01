@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4c70439-f6cc-437e-9590-4b15be7403c8" name="默认的" comment="默认的">
-      <change beforePath="$PROJECT_DIR$/7.1.md" beforeDir="false" afterPath="$PROJECT_DIR$/7.1.md" afterDir="false" />
-    </list>
+    <list default="true" id="c4c70439-f6cc-437e-9590-4b15be7403c8" name="默认的" comment="修改" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -37,7 +35,7 @@
         <entry file="file://$PROJECT_DIR$/7.1.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="516">
+              <first_editor relative-caret-position="254">
                 <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
               </first_editor>
               <second_editor />
@@ -117,11 +115,6 @@
               <item name="notes" type="b2602c69:ProjectViewProjectNode" />
               <item name="notes" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="notes" type="b2602c69:ProjectViewProjectNode" />
-              <item name="notes" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -184,12 +177,20 @@
       <workItem from="1561794862428" duration="396000" />
       <workItem from="1561795282772" duration="8586000" />
       <workItem from="1561861682525" duration="5411000" />
-      <workItem from="1561948350582" duration="1736000" />
+      <workItem from="1561948350582" duration="2135000" />
     </task>
+    <task id="LOCAL-00001" summary="修改">
+      <created>1561970371780</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561970371781</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23751000" />
+    <option name="totallyTimeSpent" value="24150000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -202,7 +203,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1563" height="845" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14472823" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -217,7 +217,7 @@
       <window_info anchor="bottom" id="运行" order="7" weight="0.32684284" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32959327" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.30575034" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30575034" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="调试" order="12" weight="0.32959327" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -232,7 +232,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="默认的" />
-    <option name="LAST_COMMIT_MESSAGE" value="默认的" />
+    <MESSAGE value="修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/js/.idea/js.iml">
@@ -286,7 +287,7 @@
     <entry file="file://$PROJECT_DIR$/7.1.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="516">
+          <first_editor relative-caret-position="254">
             <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
           </first_editor>
           <second_editor />
