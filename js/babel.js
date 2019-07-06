@@ -9,6 +9,6 @@ babel.transform(code, {}, function(err, result) {
     console.log(result,'result'); // => { code, map, ast }
 });
 
-fs.writeFile('./data.json',JSON.stringify(ast),(err)=>{
+fs.writeFile('./js/data.json',JSON.stringify(ast),(err)=>{
     if(err)console.log(err);
 })
