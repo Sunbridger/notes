@@ -1,0 +1,28 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    },
+    "extends": [
+        "airbnb-base"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2018
+    },
+    "rules": {
+        "no-unused-vars": 0, 
+        "indent": ["error", 4],
+        "no-console": 0,
+        "eol-last": 0 // Newline required at end of file but not found
+    }
+}
+/*
+"off" 和 0
+         1
+         2
+*/
