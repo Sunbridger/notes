@@ -11,8 +11,14 @@ const op = {
     fn() {
         console.log(22);
     },
-    arro: () => {
+    arrow: () => {
         console.log(7777);
     },
 };
 obj.say(1, 2);
+if (a > 1) {
+    console.log(2);
+}
+
+let soa = 'xiaos';
+soa = 'asdas';
