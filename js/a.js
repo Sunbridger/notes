@@ -31,3 +31,6 @@ let e = {
     }
 };
 //二者唯一的区别是，简写方法可以使用super关键字，而普通方法不可以
+
+module.exports = module
+console.log(module , 'ssss')
