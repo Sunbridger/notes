@@ -11,6 +11,3 @@ function mounted(){
 }
 
 // 因为Object.assign(this.form, newData)是在原对象(this.form)上修改的新的值，
-console.log(2, '测试')
-console.log(3, '测试')
-console.log(4, '测试')
