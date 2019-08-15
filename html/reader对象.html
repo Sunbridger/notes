@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reader</title>
+</head>
+<body>
+	<input type="file" id='fi'>
+	<script>
+		let file = document.getElementById('fi');
+		let reader = new FileReader();
+		let img =new Image();
+		let canvas = document.createElement('canvas');
+		let context = canvas.getContext('2d');
+		file.addEventListener('change',(e)=>{
+			let blob = e.target.files[0];
+			alert(blob.size)
+			reader.readAsDataURL(blob); //这是核心 转base64
+		});
+		reader.onload=e=>{
+			img.src=e.target.result;// e.target.result就是文件文本内容
+			console.log(e.target.result.length,'这是base64的')
+		};
+		img.onload=function(){
+			let ori_w=this.width;
+			let ori_h=this.height;
+			let [max_w,max_h]=[400,400];
+			if(ori_w>max_w||ori_h>max_h){
+				ori_w=max_w;
+				ori_h=max_h;
+			}
+			canvas.width=ori_w;
+			canvas.height=ori_h;
+			context.clearRect(0, 0, ori_w, ori_h); //清除画布
+			context.drawImage(this,0,0,ori_w, ori_h);//用自己设定的尺寸描述出图片
+			canvas.toBlob(blob=>{
+				console.log(blob,'---bolo')
+			});
+			document.documentElement.appendChild(canvas)
+			console.log(canvas,'---canvas')
+		}
+		var img2 = new Image();
+		img2.crossOrigin = '';
+		img2.onload = function () {
+		    context.drawImage(this, 0, 0);
+		    context.getImageData(0, 0, this.width, this.height);
+		};
+		img2.src = "https://avatars3.githubusercontent.com/u/496048?s=120&v=4";
+	</script>
+</body>
+</html>

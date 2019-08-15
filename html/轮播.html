@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/* *{ margin: 0; padding: 0; text-decoration: none;}
+        body {
+         padding: 20px;
+         }
+        #container { width: 600px; height: 400px; border: 3px solid #333; overflow: hidden; position: relative;}
+        #list { width: 4200px; height: 400px; position: absolute; z-index: 1;}
+        #list img { float: left;width: 600px;}
+        #buttons { position: absolute; height: 10px; width: 100px; z-index: 2; bottom: 20px; left: 250px;}
+        #buttons span { cursor: pointer; float: left; border: 1px solid #fff; width: 10px; height: 10px; border-radius: 50%; background: #333; margin-right: 5px;}
+        #buttons .on {  background: orangered;}
+        .arrow { cursor: pointer; display: none; line-height: 39px; text-align: center; font-size: 36px; font-weight: bold; width: 40px; height: 40px;  position: absolute; z-index: 2; top: 180px; background-color: RGBA(0,0,0,.3); color: #fff;}
+        .arrow:hover { background-color: RGBA(0,0,0,.7);}
+        #container:hover .arrow { display: block;}
+        #prev { left: 20px;}
+        #next { right: 20px;}*/
+ *
+{
+    margin: 0; 
+    padding: 0; 
+    text-decoration: none;
+}
+body
+{
+    padding: 20px;
+}
+#container
+{   position: relative;
+	overflow: hidden; 
+
+    width: 600px; height: 400px; border: 3px solid #333;
+}
+#list
+{   position: absolute;
+    z-index: 1;
+    width: 4200px; 
+    height: 400px;
+}
+#list img
+{
+    float: left;
+    width: 600px;
+}
+#buttons
+{
+    position: absolute; 
+    z-index: 2; 
+    bottom: 20px; 
+    left: 250px;
+    width: 100px;
+     height: 10px;
+}
+#buttons span
+{float: left; 
+	width: 10px;
+	height: 10px;
+	margin-right: 5px;
+
+    cursor: pointer; 
+    border: 1px solid #fff;
+     border-radius: 50%; 
+     background: #333;
+}
+#buttons .on
+{
+    background: orangered;
+}
+.arrow
+{font-size: 36px; 
+	font-weight: bold; 
+	line-height: 39px;
+	position: absolute; 
+	z-index: 2; 
+	top: 180px; 
+	display: none;
+	 width: 40px; 
+	 height: 40px;  
+
+    cursor: pointer; 
+    text-align: center; 
+    color: #fff;
+    background-color: RGBA(0,0,0,.3);
+}
+.arrow:hover
+{
+    background-color: RGBA(0,0,0,.7);
+}
+#container:hover .arrow
+{
+    display: block;
+}
+#prev
+{
+    left: 20px;
+}
+#next
+{
+    right: 20px;
+}
+
+	</style>
+    <script>
+        window.onload=function() {
+            // body... 
+            var prev=document.getElementById("prev");
+            var next=document.getElementById("next");
+            var list=document.getElementById("list");
+            var buttons=document.getElementById("buttons").getElementsByTagName("span");
+            var container=document.getElementById("container");
+            var index=1;
+            var timer;
+            var animated=false;
+            function shownButton(){
+                 for (var i = 0; i < buttons.length ; i++) {
+                    if( buttons[i].className == 'on'){
+                        buttons[i].className = '';
+                       /* prev和next每click一次，
+                        就会清除一次前一个class为on的span元素，
+                        所以没有必要再去循环下面的span*/
+                        break;
+                    }
+                    //  或者直接遍历清除  buttons[i].className=""；
+                }
+                buttons[index -1].className="on";
+            }
+            function animate(offset){ 
+                var time = 300;
+                var inteval = 10;
+                var speed = offset/(time/inteval);
+                  animated=true;
+                 var newLeft=parseInt(list.style.left) +offset;
+                function go(){
+                    if ( (speed > 0 && parseInt(list.style.left) < newLeft) || (speed < 0 && parseInt(list.style.left) > newLeft)) {
+                        list.style.left = parseInt(list.style.left) + speed + 'px';
+                        setTimeout(go, inteval);
+                    }
+                    else 
+                    {
+                        
+                       animated=false;
+                     // list.style.left=newLeft+"px";
+                         if (newLeft >-600) {
+                     list.style.left=-3000+"px";
+                         };
+                        if (newLeft <-3000) {
+                     list.style.left=-600+"px";
+                      };
+                    }
+                }
+                go();
+            };
+
+
+
+
+
+
+               
+            prev.onclick=function(){
+                /*添加一个if判断index为1时，如果继续往前滚的话就让index返回第五个span
+                但是当快速点击arrow时会出现一种span点亮延迟的情况。可以尝试把判断index是否大于1或小于5的情况放进
+                判断是否animated的if语句中，先判断能不能点击，再点亮。
+                */
+
+                if (!animated) {
+                if (index==1) {
+                    index=5;
+                }else {
+                   index -=1; 
+                }
+                
+                shownButton();
+                     animate(600);
+                }
+              
+
+               
+
+
+            };
+            next.onclick=function(){
+                 
+                
+                
+                if (!animated) {
+                     if (index==5) {
+                    index=1;
+                }else {
+                   index +=1; 
+                }    
+                     shownButton();
+                     animate(-600);
+                }
+            };
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].onclick=function(){
+                    //无关紧要
+                    if (this.className=="on") {
+                        return;
+                    }
+                    var myIndex=parseInt(this.getAttribute("index"));
+                    var offset=-600*(myIndex-index);
+                     if (!animated) {
+                     animate(offset);
+                }
+                    index=myIndex;
+                     shownButton();
+                
+                }
+            }
+            
+            function play(){
+                timer=setInterval(function(){
+                    next.onclick();
+                },2000);
+            }
+            function stop(){
+                clearInterval(timer);
+            }
+           play();
+        container.onmouseover=stop;
+        container.onmouseout=play;
+        }
+    </script>
+</head>
+<body>
+	
+<div id="container">
+    <div id="list" style="left: -600px;">
+        <img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=575b36d70d3b5bb5a1d726fe06d2d523/a6efce1b9d16fdfad03ef192ba8f8c5494ee7b7f.jpg" alt="假5"/>
+        <img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=f888027cebdde711f8d245f697eecef4/71cf3bc79f3df8dcfcea3de8c311728b461028f7.jpg" alt="1"/>
+        <img src="https://ss1.baidu.com/9vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=10da86d6df43ad4bb92e40c0b2035a89/03087bf40ad162d93b3a196f1fdfa9ec8b13cde9.jpg" alt="2"/>
+        <img src="https://ss3.baidu.com/-fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=d4f701b004d162d99aee641c21dea950/b7003af33a87e950e3d5bc181e385343faf2b480.jpg" alt="3"/>
+        <img src="https://ss3.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=dc39044b26381f3081198ba999014c67/6159252dd42a2834768d007855b5c9ea15cebf9d.jpg" alt="4"/>
+        <img src="https://ss0.baidu.com/7Po3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=575b36d70d3b5bb5a1d726fe06d2d523/a6efce1b9d16fdfad03ef192ba8f8c5494ee7b7f.jpg" alt="5"/>
+        <img src="https://ss2.baidu.com/-vo3dSag_xI4khGko9WTAnF6hhy/image/h%3D300/sign=f888027cebdde711f8d245f697eecef4/71cf3bc79f3df8dcfcea3de8c311728b461028f7.jpg" alt="假5"/>
+    </div>
+    <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+</div>
+</body>
+</html>

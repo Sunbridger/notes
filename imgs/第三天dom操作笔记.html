@@ -1,0 +1,445 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:笔记</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">复习</h1>
+<ol>
+<li>值类型与引用类型的特征<ul>
+<li>内存结构( 画图 ).</li>
+<li>赋值特征: 值类型两个数据, 引用类型两个变量一个数据.</li>
+<li>参数传递: 值类型: 函数内外两不同; 引用类型: 函数内外变量不同同一对象.</li>
+</ul>
+</li>
+<li>深拷贝与浅拷贝<ul>
+<li>var o = {}; o[ k ] = p[ k ];</li>
+<li>o[ k ] = {}; o[ k ][ key ] = p[ k ][ key ]</li>
+<li>让每一个对象都提供一个 deepCopy 的方法 </li>
+<li>注意: 1, 什么是深浅拷贝; 2, 代码实现的方式</li>
+</ul>
+</li>
+<li>对象的动态特性<ul>
+<li>如果对象想要属性, 就加上即可</li>
+<li>如果对象想要方法, 就加上即可</li>
+<li>如果对象想移除方法或属性, 就 delete 即可<pre><code>var o = {};
+o.name = &#39;jim&#39;;
+o.sayHello = function () {};
+</code></pre></li>
+</ul>
+</li>
+<li>构造函数的执行过程<ul>
+<li>按照构造方法的执行过程一一说明其步骤</li>
+</ul>
+</li>
+<li>异常处理<ul>
+<li>什么是异常</li>
+<li>分类: 1, 运行环境多样性; 2, 代码语法错误</li>
+<li>处理办法: 语法</li>
+<li>如何抛出: 语法</li>
+</ul>
+</li>
+<li>DOM 操作<ul>
+<li>绘制 DOM 树: childNodes, attributes</li>
+<li>从一个中心元素访问其所有的直系亲属元素<ul>
+<li>访问父节点: parentNode</li>
+<li>访问上一个兄弟节点: previousSibling</li>
+<li>访问下一个兄弟节点: nextSibling</li>
+<li>访问第 1 个属性节点: attributes[ 1 ]</li>
+<li>访问最后一个子节点: lastChild 或 childNodes[ childNodes.length - 1 ]</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="-">补充</h1>
+<h2 id="-">构造函数的执行过程</h2>
+<ol>
+<li>new 创建对象, 然后传递给构造函数的 this</li>
+<li>在构造函数内部使用对象的动态特性为对象添加成员</li>
+</ol>
+<p>构造函数的本质与下面的代码一样</p>
+<pre><code>    function Person ( o ) {
+        o.name = &#39;jim&#39;;
+        o.age = 19;
+        o.sex = &#39;male&#39;; // 男, female 女
+        return o;
+    }
+    var p = Person( {} );
+</code></pre><p>一开始就是 {}, 然后加属性. 至少要四行代码</p>
+<pre><code>    var p = {};
+    p.name = &#39;jim&#39;;
+    p.age = 19;
+    p.sex = &#39;male&#39;;
+</code></pre><p>如果有函数, 可以将上面的四句话减为一句话</p>
+<pre><code>    function createPerson() {
+        var p = {};
+        p.name = &#39;jim&#39;;
+        p.age = 19;
+        p.sex = &#39;male&#39;;
+        return p;
+    }
+    var per = createPerson();
+</code></pre><h2 id="-">深浅拷贝</h2>
+<pre><code>    var p1 = {};
+    p1.name = p.name;
+    ...
+    p1.car = {};
+    p1.car.name = p.car.name;
+</code></pre><h1 id="dom-">DOM 操作</h1>
+<h2 id="-">访问由于树关系( 节点 )</h2>
+<h2 id="-">方法与功能</h2>
+<h3 id="-">核心内容就是利用 增删改查</h3>
+<h3 id="-">查询</h3>
+<p>就是获取元素</p>
+<ol>
+<li>标准 DOM API<ul>
+<li>doucment.getElementById</li>
+<li>document.getElementsByTagName</li>
+<li>document.getElementsByName</li>
+<li>document.getElementsByClassName</li>
+<li>document.querySelectorAll</li>
+</ul>
+</li>
+<li>亲属访问</li>
+<li>属性获取<ul>
+<li>getAttribute</li>
+<li>getAttributeNode</li>
+</ul>
+</li>
+</ol>
+<h3 id="-">增加</h3>
+<ol>
+<li>创建<ul>
+<li>document.createEelement    创建元素节点</li>
+<li>document.createTextNode    创建文本节点</li>
+<li>doucment.createAttribute    属性节点</li>
+<li>innerHTML</li>
+<li>innerText</li>
+<li>cloneNode()</li>
+</ul>
+</li>
+<li>加入<ul>
+<li>appendChild                追加到结尾处</li>
+<li>innerHTML</li>
+<li>insertBefore                用法?将元素插入到某一个元素的前面<pre><code>父元素.insertBefore( 新元素, 旧元素 );
+// 将 新元素 插入到 旧元素 的前面
+</code></pre></li>
+</ul>
+</li>
+<li>其他<ul>
+<li>style 的操作</li>
+<li>setAttribute( 属性名, 属性值 )</li>
+</ul>
+</li>
+</ol>
+<h3 id="-">删除</h3>
+<ol>
+<li>删除元素<ul>
+<li>removeChild</li>
+<li>removeAttributeNode</li>
+</ul>
+</li>
+</ol>
+<h3 id="-">修改</h3>
+<ol>
+<li>修改节点<ul>
+<li>删除节点再加入</li>
+</ul>
+</li>
+<li>修改样式<ul>
+<li>style.xxx = vvv;</li>
+<li>setAttribute</li>
+</ul>
+</li>
+<li>修改文本<ul>
+<li>innerHTML</li>
+<li>innerText</li>
+<li>节点操作</li>
+<li>nodeValue</li>
+</ul>
+</li>
+<li>修改属性<ul>
+<li>.xxx = vvv</li>
+<li>setAttribute</li>
+</ul>
+</li>
+</ol>
+<h1 id="-">面试题</h1>
+<ol>
+<li>js 是什么语言<ul>
+<li>基于对象: 没有对象什么事儿都所不了</li>
+<li>脚本语言: 不严格的定义, 写出来解释执行的语言. 和编译型语言对象( c, c++, java, c# ).</li>
+<li>基于原型: 和继承有关</li>
+</ul>
+</li>
+<li>出现 undefiend<ul>
+<li>访问数组或对象不存在的成员</li>
+<li>定义变量为赋值</li>
+<li>函数没有返回值, 或 return 后没有数据</li>
+</ul>
+</li>
+<li>对数组元素去重( * )<ul>
+<li>利用一个新数组存数据</li>
+<li>遍历旧数组, 然后在新数组中找是否已存在该数据</li>
+<li>indexOf != -1</li>
+</ul>
+</li>
+<li>DOM 操作<ul>
+<li>先获取元素, 设置或修改属性或子节点</li>
+</ul>
+</li>
+</ol>
+<h1 id="-prototype">原型 prototype</h1>
+<h2 id="js-">js 的对象比较</h2>
+<p>由于 js 是解释执行的语言, 那么再代码中出现函数与对象如果重复执行, 会创建多个副本</p>
+<ol>
+<li>在代码中重复执行的代码容易出现重复的对象</li>
+<li>创建一个 Person 构造函数, 以创建 对象. 要求有 name, age, gender 和 sayHello</li>
+<li>代码出现的错误<pre><code> // 1
+ function Person() {
+     var o = {};
+     o.name = ...
+     return o;
+ }
+ // 2
+ function Person () {
+     name: ....
+     age: ....
+     ...
+ }
+</code></pre></li>
+<li>传统的构造方法的定义方式会影响性能, 容易造成多个对象有多个方法副本. 应该讲方法单独抽取出来. 让所有的对象共享该方法.</li>
+<li>可以考虑将方法全部放到外面但是有安全隐患<ul>
+<li>在开发中会引入各种框架或库. 自定义的成员越多, 出现命名冲突的几率越大</li>
+<li>可能在开发中会有多个构造函数. 每一个构造函数应该有多个方法. 那么就会变得不容易维护.</li>
+</ul>
+</li>
+<li>任意一个对象都会默认的链接到它的原型中<ul>
+<li>创建一个函数. 会附带的创建一个特殊的对象. 该对象使用 函数.prototype 引用. 称其为函数的原型属性.</li>
+<li>每一个由该函数作为构造函数创建的对象, 都会默认的连接到该对象上.</li>
+<li>在该对象访问某一个方法或属性的时候, 如果该对象中没有, 就会到这个神秘对象中去查找.</li>
+</ul>
+</li>
+</ol>
+<h2 id="-">传统构造函数的问题</h2>
+<pre><code>    function Foo() {
+        this.sayHello = function () {
+        }
+    }
+</code></pre><ol>
+<li>由于对象是调用 <code>new Foo()</code> 所创建出来的. 因此每一个对象在创建的时候, 函数 sayHello 都会被创建一次</li>
+<li>那么每一个对象都含有一个独立的, 不同的, 但是功能逻辑一样的函数. 比如: <code>{} == {}</code></li>
+<li>在代码中方法就会消耗性能. 最典型的资源就是内存. </li>
+<li>这里最好的办法就是将函数体放在构造函数之外. 那么在构造函数中只需要引用该函数即可<pre><code> function sayHello () {}
+ function Foo () {
+     this.say = sayHello;
+ }
+</code></pre></li>
+<li>会在开发中变得困难: 引入框架危险, 代码繁冗不好维护. 解决办法就是外面的函数如果不占用名字. 而且在函数旗下就好了.</li>
+<li>每一个函数在定义的时候, 有一个神秘对象被创建出来.</li>
+<li>每一个由构造函数创建的对象都会默认的连接到该神秘对象上.<pre><code> var f1 = new Foo();
+ var f2 = new Foo();
+ f1.sayHello(); // 如果 f1 没有 sayHello, 那么就会在 Foo.prototype 中去找
+ f2.sayGoodBye(); // 如果 f2 没有改方法, 那么就会在 Foo.prototype 中去找
+</code></pre></li>
+<li>由构造函数创建出来的众多对象共享一个对象, 就是 构造函数.prototype</li>
+<li><p>只需要将共享的东西, 重复会多占用内存的东西放到 构造函数.prototype 中, 那么所有的对象就可以共享了.</p>
+<pre><code> function Foo() {}
+ Foo.prototype.sayHello = function () {
+     console.log( ... );
+ };
+ var f1 = new Foo();
+ f1.sayHello();
+ var f2 = new Foo();
+ f2.sayHello();
+
+ f1.sayHello === f2.sayHello
+</code></pre></li>
+<li>练习: 写一个构造函数 Student, 要求有 name, age, gender, sayHello, study. 要求构造函数带参数.</li>
+</ol>
+<h2 id="-">常见错误</h2>
+<ol>
+<li>写 构造函数.prototype 的时候, 将属性也加到里面.<pre><code> function Person() {}
+ Person.prototype.name = &#39;张三&#39;;
+ var p = new Person();
+</code></pre></li>
+<li><p>赋值的错误</p>
+<pre><code> function Person() {}
+ Person.prototype.name = &#39;张三&#39;;
+ var p1 = new Person();
+ var p2 = new Person();
+ p1.name = &#39;李四&#39;;
+
+ console.log( p1.name );
+ console.log( p2.name );
+ // 如果是访问数据, 当前对象中如果没有该数据就到构造函数的原型属性中去找
+ // 如果是写数据, 当对象中有该数据的时候, 就是修改值; 如果对象没有该数据, 那么就添加值
+</code></pre></li>
+</ol>
+<h1 id="-">原型相关的概念</h1>
+<ol>
+<li>关于面向对象的概念<ul>
+<li>类 class: 在 js 中就是构造函数<ul>
+<li>在传统的面向对象语言中, 使用一个叫做类的东西定义模板. 然后使用模板创建对象.</li>
+<li>在构造方法中也具有类似的功能. 因此称其为类<pre><code>// 在 java 中, 最小的代码单位是 类
+class Program {
+// 成员
+}
+</code></pre></li>
+</ul>
+</li>
+<li>实例 ( instance ) 与对象 ( object )<ul>
+<li>实例一般是指某一个构造函数创建出来的对象. 我们成为 xxx 构造函数的实例</li>
+<li>实例就是对象. 对象是一个泛称.</li>
+<li>实例与对象是一个近义词</li>
+</ul>
+</li>
+<li>键值对与属性和方法<ul>
+<li>在 js 中键值对的集合称为对象</li>
+<li>如果值为数据( 非函数 ), 就称该键值对为属性 property</li>
+<li>如果值为函数( 方法 ), 就称该键值对为方法 method</li>
+</ul>
+</li>
+<li>父类与子类<ul>
+<li>传统的面向对象语言中使用类来实现继承. 那么就有父类, 子类的概念</li>
+<li>父类又称为基类, 子类又称为派生类</li>
+<li>在 js 中常常称为父对象, 子对象. 基对象, 派生对象.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>原型相关的概念<ul>
+<li>神秘对象针对构造函数称为 &quot;原型属性&quot;<ul>
+<li>神秘对象就是构造函数的原型属性</li>
+<li>简称原型</li>
+</ul>
+</li>
+<li>神秘对象与构造函数所创建出来的对象也有一定关系<ul>
+<li>关系是什么</li>
+<li>神秘对象针对构造函数创建出来的对象称为 &quot;原型对象&quot;</li>
+<li>简称原型</li>
+</ul>
+</li>
+<li>对象继承自其原型<ul>
+<li>构造函数创建的对象 继承自 构造函数的原型属性</li>
+<li>构造函数创建的对象 继承自 该对象的原型对象</li>
+<li>构造函数所创建出来的对象与构造函数的原型属性表示的对象是两个不同的对象<ul>
+<li>原型中的成员, 可以直接被实例对象所使用</li>
+<li>也就是说实例对象直接 &quot;含有&quot; 原型中的成员</li>
+<li>因此 实例对象 继承自 原型</li>
+<li>这样的继承就是 &quot;原型继承&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>一些问题<ul>
+<li>{} 构造函数是什么?</li>
+<li>凡是字面量的对象都有构造函数<ul>
+<li>{}       Object</li>
+<li>[]    Array</li>
+<li>/./    RegExp</li>
+<li>function ...        Function</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="-">如何使用原型</h1>
+<p>为什么使用原型? </p>
+<ol>
+<li>利用对象的动态特性<ul>
+<li>构造函数.prototype.XXX = vvvv;</li>
+</ul>
+</li>
+<li>利用直接替换<pre><code> Student.prototype = {
+     sayHello: function () {},
+     study: function () {}
+ };
+</code></pre></li>
+</ol>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

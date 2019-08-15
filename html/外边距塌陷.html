@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.div1{
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin-bottom: 20px;
+		}
+		.div2{
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			margin-top: 30px;
+		}
+		.parent{
+			width: 500px;
+			height: 500px;
+			background-color: #ccc;
+			/*
+			解决方法
+			 */
+			overflow: auto;
+		    /* padding: 1px; */
+		    /* display: table-cell; */
+		    /* border: 1px solid transparent; */
+		}
+		.son{
+			width: 200px;
+			height: 200px;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<div class="div1"></div>
+	<div class="div2"></div>
+	<h1>以上的是’垂直并列‘的塌陷 一般解决方法就是让其中一个有边距即可</h1>
+
+	<div class="parent">
+		<div class="son"></div>
+	</div>
+	
+</body>
+</html>
