@@ -43,3 +43,4 @@ let students = {
   // { beatrice: 22, eloise: 21 }
 
   console.log(DrinkingAgeStudents)
+
