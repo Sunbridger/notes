@@ -16,4 +16,4 @@ a = a.map((el) => {
 })
 console.log(arr)
 
-console.log('dev/test');
+console.log('dev/test merge会把commit打乱 。。。');
