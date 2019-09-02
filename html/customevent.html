@@ -16,7 +16,7 @@
 
         // Create a new event, allow bubbling, and provide any data you want to pass to the "details" property
         const eventAwesome = new CustomEvent('awesome', {
-            // bubbles: false,
+            // bubbles: false, 阻止冒泡的话父元素将监听不到下面的事件
             bubbles: true,
             detail: { text: () => textarea.value }
         });
