@@ -4,3 +4,5 @@ const opt = {};
 babel.transform(code, (err, result) => {
     console.log(result);
 });
+let babelP = require('@babel/parser');
+console.log(babelP);
