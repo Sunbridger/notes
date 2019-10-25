@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.5.5",
-    "url": "^0.11.0"
+    "url": "^0.11.0",
+    "yargs": "^14.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
