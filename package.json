@@ -6,6 +6,7 @@
   "dependencies": {
     "@babel/runtime": "^7.5.5",
     "moment": "^2.24.0",
+    "svg-captcha": "^1.4.0",
     "url": "^0.11.0",
     "yargs": "^14.2.0"
   },
