@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.5.5",
+    "axios": "^0.19.0",
     "moment": "^2.24.0",
     "qcloudsms_js": "^0.1.1",
     "qrcode-terminal": "^0.12.0",

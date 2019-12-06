@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+    <script>
+        axios.post('http://127.0.0.1:7001/testpost', {
+            name: 'postnnnnn',
+            asd: 'sadasdadsasdadsa'
+        }).then(res => {
+            console.log(res, 'post axios ');
+        })
+    </script>
+</body>
+</html>
