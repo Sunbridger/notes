@@ -609,6 +609,11 @@ punycode@^2.1.0:
   resolved "http://registry.npm.souche-inc.com/punycode/download/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha1-tYsBCsQMIsVldhbI0sLALHv0eew=
 
+qcloudsms_js@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/qcloudsms_js/-/qcloudsms_js-0.1.1.tgz#e042b683ba1312a20d7dd0322446f20fd3dc644a"
+  integrity sha512-ewdlD32XF0BkV5sGNCFHCR9FSf6fi6PijJGX1YkowFziycYUyoCThDWKM0aeZG6kSQ1y8qHHBYFhAl7JTSlhuQ==
+
 qrcode-terminal@^0.12.0:
   version "0.12.0"
   resolved "http://registry.npm.souche-inc.com/qrcode-terminal/download/qrcode-terminal-0.12.0.tgz#bb5b699ef7f9f0505092a3748be4464fe71b5819"
@@ -801,6 +806,11 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
   resolved "http://registry.npm.souche-inc.com/tweetnacl/download/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
+
+ua-device@^0.1.10:
+  version "0.1.10"
+  resolved "https://registry.npmjs.org/ua-device/-/ua-device-0.1.10.tgz#7e1a1b305d51e114032467092081c1d6374a4dce"
+  integrity sha1-fhobMF1R4RQDJGcJIIHB1jdKTc4=
 
 uri-js@^4.2.2:
   version "4.2.2"

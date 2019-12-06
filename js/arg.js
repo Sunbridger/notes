@@ -1,2 +1,2 @@
 let argv = require('yargs').argv;
-console.log(argv, '----argv--参数');
+console.log(argv, typeof argv.a, '----argv--参数');
