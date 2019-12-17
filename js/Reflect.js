@@ -9,5 +9,3 @@ const flag = Reflect.defineProperty(obj, 'name', {
     enumerable: true
 });
 console.log(fl, flag, obj);
-
-console.log('test');
