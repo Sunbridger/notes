@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 自带编译器哦 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- 不带编译器 -->
+    <!-- <script src="https://cdn.bootcss.com/vue/2.6.10/vue.runtime.js"></script> -->
+    <title>vue script</title>
+</head>
+<body>
+    <div id="app">
+
+!function(e,t){"object"==typeof exports  && "undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e=e||<strong>self</strong>).Vue=t()}
+        <br/>
+        {{ message }}
+        将Vue注入到self或者global这个全局对象中
+        {{self}}
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        });
+    </script>
+</body>
+</html>
