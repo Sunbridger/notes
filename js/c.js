@@ -18,4 +18,3 @@ function test(arr1, arr2) {
 }
 console.log(test(arr1, arr2));
 1
-2
