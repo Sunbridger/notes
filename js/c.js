@@ -17,3 +17,6 @@ function test(arr1, arr2) {
     return result;
 }
 console.log(test(arr1, arr2));
+1
+2
+3
