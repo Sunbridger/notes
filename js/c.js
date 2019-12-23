@@ -16,5 +16,4 @@ function test(arr1, arr2) {
     console.log(i);
     return result;
 }
-let a = test(arr1, arr2);
-console.log(a);
+console.log(test(arr1, arr2));
