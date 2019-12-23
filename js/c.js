@@ -17,3 +17,4 @@ function test(arr1, arr2) {
     return result;
 }
 console.log(test(arr1, arr2));
+console.log(test([11, 21], arr2));
