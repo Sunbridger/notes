@@ -1,5 +1,3 @@
-/*eslint-disable */
-
 const formatParams = (params) => {
     const obj = {
         prepaidAmountName: '首付租金',
