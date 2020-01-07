@@ -16,6 +16,3 @@ function checkAllIsSame(arr) {
     }
     return true;
 }
-// console.log(checkAllIsSame(arr));
-// console.log(arr, arr.length);
-console.log(arr.splice(1, 1));
