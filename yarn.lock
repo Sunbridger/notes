@@ -565,6 +565,11 @@ ms@^2.1.1:
   resolved "http://registry.npm.souche-inc.com/ms/download/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha1-0J0fNXtEP0kzgqjrPM0YOHKuYAk=
 
+nodemailer@^6.4.2:
+  version "6.4.2"
+  resolved "http://registry.npm.souche-inc.com/nodemailer/download/nodemailer-6.4.2.tgz#7147550e32cdc37453380ab78d2074533966090a"
+  integrity sha1-cUdVDjLNw3RTOAq3jSB0UzlmCQo=
+
 oauth-sign@~0.9.0:
   version "0.9.0"
   resolved "http://registry.npm.souche-inc.com/oauth-sign/download/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
