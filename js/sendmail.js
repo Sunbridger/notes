@@ -1,18 +1,18 @@
 const nodemailer = require('nodemailer');
 
 let transporter = nodemailer.createTransport({
-  service: 'QQ',
+  service: '163',
   port: 465,
   secureConnection: true,
   auth: {
-    user: '739272884@qq.com',
+    user: 'shuhaozhushou@163.com',
     // 这里密码不是qq密码，是你设置的smtp授权码
-    pass: 'jnbofdxrorzcbdid',
+    pass: 'QAWqaw123',
   }
 });
 
 let mailOptions = {
-  from: '"Sunbridger" <739272884@qq.com>', // sender address
+  from: '"哈哈哈哈哈" <shuhaozhushou@163.com>', // sender address
   to: 'sunbridger@sina.com', // list of receivers
   subject: '来自于定时任务的警告⚠️',
   html: `
@@ -21,10 +21,11 @@ let mailOptions = {
   `
 };
 
-// send mail with defined transport object
+// send mail with defined transport obct
 transporter.sendMail(mailOptions, (error, info) => {
   if (error) {
-    return console.log(error);
+    console.log(error, 'error');
+  } else {
+      console.log(info.messageId, '-iiiid');
   }
-  console.log(info.messageId, '-iiiid');
 });
