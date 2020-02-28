@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打点html</title>
+</head>
+<style>
+    #auto-div {
+        height: 80vh;
+        width: 100%;
+        background: #cfc;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: inherit;
+        -webkit-box-orient: vertical;
+        line-height: 1.7;
+    }
+</style>
+<body>
+    <div id="auto-div"></div>
+    <script>
+        const ad = document.querySelector('#auto-div');
+        const styleObj = getComputedStyle(ad);
+        let text = '';
+        Array.from(Array(500).keys()).forEach(() => {
+            text += '你好世界hello，树先生';
+        });
+        const lh = parseInt(styleObj.lineHeight, 10);
+        const h = parseInt(styleObj.height, 10);
+        const lc = Math.round(h / lh);
+        console.log(lc);
+        ad.style.webkitLineClamp = lc;
+        ad.innerHTML = text;
+    </script>
+</body>
+</html>
