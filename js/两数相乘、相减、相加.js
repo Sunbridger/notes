@@ -27,3 +27,6 @@ function accAdd(arg1,arg2){
     //动态控制精度长度
     return ((arg1*m+arg2*m)/m)
 }
+
+let a = accMul(0.01, '200.12');
+console.log(a, typeof a );
