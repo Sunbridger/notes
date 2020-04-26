@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实现localStorage 监听</title>
+</head>
+<body>
+    <input type="text" id="ipt" placeholder="输入需要存储的数据">
+    <button id="btn">提交</button>
+
+    <script>
+        document.querySelector('#btn').addEventListener('click', () => {
+            window.localStorage.setItem('input', document.querySelector('#ipt').value);
+        });
+
+    //监听自定义事件 setItemEvent
+    localStorage.setItem = (Orgin=>{
+        return function(key,value){
+            let setItemEvent = new CustomEvent('setItemEvent',{detail:{setKey:key,value}})
+            window.dispatchEvent(setItemEvent)
+            Orgin.call(this,key,typeof value == 'string'? value : JSON.stringify(value))
+        }
+    })(localStorage.setItem);
+
+    //监听自定义事件 getItemEvent
+    localStorage.getItem = (Orgin=>{
+        return function(key){
+            let result = JSON.parse(Orgin.call(this,key))
+            let getItemEvent = new CustomEvent('getItemEvent',{detail:{getKey:key,value:result}})
+            window.dispatchEvent(getItemEvent)
+            return result
+        }
+    })(localStorage.getItem);
+
+
+    //监听自定义事件 removeItemEvent
+    localStorage.removeItem = (Orgin=>{
+        return function(key){
+            let removeItemEvent = new CustomEvent('removeItemEvent',{detail:{removeKey:key}})
+            window.dispatchEvent(removeItemEvent)
+            Orgin.call(this,key)
+        }
+    })(localStorage.removeItem);
+
+
+    // 实用如下：
+
+    //localStorage.setItem监听
+    window.addEventListener('setItemEvent',function(e){
+        console.log(e.detail)
+    });
+
+    //localStorage.getItem监听
+    window.addEventListener('getItemEvent',function(e){
+        console.log(e.detail)
+    });
+
+    //localStorage.removeItem监听
+    window.addEventListener('removeItemEvent',function(e){
+        console.log(e.detail)
+    });
+    </script>
+</body>
+</html>

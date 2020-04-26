@@ -6,4 +6,5 @@ let a = formatTime(new Date(), 'YYYY/MM/DD') > '2020/03/14';
 
 console.log(a);
 
-console.log('2016/02/13' > '2019/12/14')
+
+console.log('2016/02/13' > '2019/12/14');
