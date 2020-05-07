@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{title}}
+        <input type="text" v-model="school.text">
+        <p>{{school.name}}</p>
+        <p>{{school.age}}</p>
+        <div>
+            <p>
+                <span>inner</span>
+                <span>{{school.likes.sport}}</span>
+            </p>
+        </div>
+        {{school.text}}
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                school: {
+                    name: 'Sunbridger',
+                    age: 11,
+                    text: '这是文本的',
+                    likes: {
+                        sport: '篮球'
+                    }
+                }
+            },
+            computed: {
+                title() {
+                    return this.school.text + '这是computed';
+                }
+            }
+        })
+    </script>
+</body>
+</html>
