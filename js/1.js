@@ -15,3 +15,4 @@ let obj1 = {
 let obj2 = {
     a: ''
 };
+console.log(obj2);
