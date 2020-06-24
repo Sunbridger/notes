@@ -30,9 +30,9 @@
             直接创建虚拟DOM,不需要考虑子节点的问题
         */
         class VNode {
-            constructor(tag, data, value, type) {
+            constructor(tag, attrs, value, type) {
                 this.tag = tag && tag.toLowerCase();
-                this.attrs = data;
+                this.attrs = attrs;
                 this.value = value;
                 this.type = type;
                 this.children = [];
