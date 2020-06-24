@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>change to vnode</title>
+</head>
+
+<body>
+    <div id="app">
+        阿斯顿
+        <div class="box">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+        </div>
+        <footer>这是地步</footer>
+    </div>
+    <script>
+        /*
+        使用document.querySelector获取要转换成虚拟DOM的模板
+        使用nodeType方法来获取是元素类型还是文本类型
+        若是元素类型
+            使用nodeName获取标签名
+            使用attributes获取属性名,并将具体的属性保存到一个对象_attrObj中
+            创建虚拟DOM节点
+            考虑元素类型是否有子节点,使用递归,将子节点的虚拟DOM存入其中
+        若是文本类型
+            直接创建虚拟DOM,不需要考虑子节点的问题
+        */
+        class VNode {
+            constructor(tag, data, value, type) {
+                this.tag = tag && tag.toLowerCase();
+                this.attrs = data;
+                this.value = value;
+                this.type = type;
+                this.children = [];
+            }
+            appendChild(vnode) {
+                this.children.push(vnode);
+            }
+        }
+
+        function getVNode(node) {
+            const { nodeType, nodeName, nodeValue, attributes, childNodes } = node;
+            let _vnode = null;
+            switch (nodeType) {
+                case 1:
+                    let attrs = {}
+
+                    Array.from(attributes).forEach(obj => {
+                        attrs[obj.nodeName] = obj.nodeValue;
+                    });
+
+                    _vnode = new VNode(nodeName, attrs, undefined, nodeType)
+
+                    Array.from(childNodes).forEach(node => {
+                        _vnode.appendChild(getVNode(node));
+                    });
+                    break;
+                case 3:
+                    _vnode = new VNode(undefined, undefined, nodeValue, nodeType);
+
+                default:
+                    break;
+            }
+            return _vnode;
+        }
+
+        let root = document.querySelector('#app');
+        let vroot = getVNode(root);
+        console.log(vroot);
+
+        function parseVNode(vnode) {
+            const { type, attrs, value, tag, children } = vnode;
+            let _node = null;
+            switch (type) {
+                case 1:
+                    _node = document.createElement(tag);
+
+                    Object.keys(attrs).forEach(key => {
+                        _node.setAttribute(key, attrs[key])
+                    });
+
+                    Array.from(children).forEach(subvnode => {
+                        _node.appendChild(parseVNode(subvnode))
+                    });
+
+                    break;
+
+                case 3:
+                    _node = document.createTextNode(value);
+
+                default:
+                    break;
+            }
+            return _node;
+        }
+        let htmlnow = parseVNode(vroot);
+
+
+
+        //虚拟dom，参数分别为标签名、属性对象、子DOM列表
+        // var VElement = function (tagName, props, children) {
+        //     //保证只能通过如下方式调用：new VElement
+        //     if (!(this instanceof VElement)) {
+        //         return new VElement(tagName, props, children);
+        //     }
+        //     if (Array.isArray(props)) {
+        //         children = props;
+        //         props = {};
+        //     }
+
+        //     //设置虚拟dom的相关属性
+        //     this.tagName = tagName;
+        //     this.props = props || {};
+        //     this.children = children || [];
+        //     this.key = props ? props.key : void 666;
+        //     var count = 0;
+        //     this.children.forEach(function (child, i) {
+        //         if (child instanceof VElement) {
+        //             count += child.count;
+        //         } else {
+        //             children[i] = '' + child;
+        //         }
+        //         count++;
+        //     });
+        //     this.count = count;
+        // }
+        // var vdom = new VElement('div', { 'id': 'container' }, [
+        //     new VElement('h1', { style: 'color:red' }, ['simple virtual dom']),
+        //     new VElement('p', ['hello world']),
+        //     new VElement('ul', [new VElement('li', ['item #1']), new VElement('li', ['item #2'])]),
+        // ]);
+        // console.log(vdom);
+
+        // let oneObj = [];
+        // function Obj(tag, attrs, children) {
+        //     this.tag = tag;
+        //     this.attrs = attrs;
+        //     this.children = getJSDOMTree(this.children);
+        // }
+        // function getJSDOMTree(wrapperEle) {
+        //     wrapperEle
+        //     && wrapperEle.childNodes
+        //     && wrapperEle.childNodes.forEach(row => {
+        //         if (row.nodeType === 1) {
+        //             oneObj.push(new Obj(row.tagName, null, row.childNodes))
+        //         }
+        //         if (row.nodeType === 3) {
+        //             return new Obj(null, null, row.nodeValue);
+        //         }
+        //     });
+        // }
+
+        // let wrapperEle = document.querySelector('#app');
+
+        // getJSDOMTree(wrapperEle);
+    </script>
+</body>
+
+</html>
