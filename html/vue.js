@@ -5032,7 +5032,7 @@
     opts._parentListeners = vnodeComponentOptions.listeners;
     opts._renderChildren = vnodeComponentOptions.children;
     opts._componentTag = vnodeComponentOptions.tag;
-
+    debugger;
     if (options.render) {
       opts.render = options.render;
       opts.staticRenderFns = options.staticRenderFns;
@@ -11669,6 +11669,7 @@
       options,
       vm
     ) {
+        debugger;
       options = extend({}, options);
       var warn$$1 = options.warn || warn;
       delete options.warn;

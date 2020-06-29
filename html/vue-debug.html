@@ -14,17 +14,19 @@
     </div>
     <script src="./vue.js"></script>
     <script>
-        debugger;
         const vm = new Vue({
             el: '#app',
-            data: {
-                name: '你好世界',
-                age: 12
+            // render: h => h('div', this.name),
+            data() {
+                return {
+                    name: 'xxx',
+                    age: 23
+                }
             },
             beforeCreate() {
                 console.log(1);
             }
-        })
+        });
     </script>
 </body>
 </html>
