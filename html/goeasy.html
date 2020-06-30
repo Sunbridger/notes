@@ -14,13 +14,13 @@
             host: "hangzhou.goeasy.io",//应用所在的区域地址，杭州：hangzhou.goeasy.io，新加坡：singapore.goeasy.io
             appkey: "BC-fed829ecadcc463b98dfa45476ca4c8f",//替换为您的应用appkey
             onConnected: function() {
-            alert('连接成功！')
+                alert('连接成功！')
             },
             onDisconnected: function() {
-            alert('连接断开！')
+                alert('连接断开！')
             },
             onConnectFailed: function(error) {
-            alert('连接失败或错误！')
+                alert('连接失败或错误！')
             }
         });
         goeasy.publish({
