@@ -7232,6 +7232,11 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+vue-router@^3.3.4:
+  version "3.3.4"
+  resolved "http://registry.npm.souche-inc.com/vue-router/download/vue-router-3.3.4.tgz#4e38abc34a11c41b6c3d8244449a2e363ba6250b"
+  integrity sha1-Tjirw0oRxBtsPYJERJouNjumJQs=
+
 watchdog@^0.8.12, watchdog@^0.8.17:
   version "0.8.17"
   resolved "http://registry.npm.souche-inc.com/watchdog/download/watchdog-0.8.17.tgz#515596a0d413b8a2a2a3ebcfeb142a0dda28b438"
