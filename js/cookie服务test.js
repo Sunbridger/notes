@@ -5,16 +5,32 @@ const router = require('koa-router')();
 
 
 router.get('/', async (ctx, next) => {
-    ctx.cookies.set('ccc', 'sunbridher', {
-        domain: '.souche.com',  // 写cookie所在的域名
-        httpOnly: false,  // 是否只用于http请求中获取
-        overwrite: false  // 是否允许重写
-      });
-    ctx.body = {
-        name: 'niii',
-        age: 10
+    if (ctx.cookies.get('login')) {
+        ctx.body = {
+            msg: '登陆成功',
+            code: 1
+        };
+    } else {
+        ctx.body = {
+            msg: '请登录',
+            code: -1
+        };
     }
 });
+
+router.get('/login', async (ctx, next) => {
+    ctx.cookies.set('login', 'sunbridher', {
+        httpOnly: false,  // 是否只用于http请求中获取
+        overwrite: false  // 是否允许重写
+    });
+    ctx.body = {
+        msg: '登陆成功',
+        code: 1
+    };
+});
+
+
+
 
 
 
