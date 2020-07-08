@@ -9,6 +9,8 @@
     "axios": "^0.19.0",
     "bignumber.js": "^9.0.0",
     "exec": "^0.2.1",
+    "koa": "^2.13.0",
+    "koa-router": "^9.1.0",
     "lei-stream": "^1.4.2",
     "lodash": "^4.17.15",
     "mockjs": "^1.1.0",
