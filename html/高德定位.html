@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #container {width:100%; height: 400px; }
+</style>
+<body>
+    <div id="container"></div>
+    <button id="btn">change</button>
+    <script src="https://webapi.amap.com/maps?v=1.4.11&key=630f641631116d89f801a59e462247c6&callback=onLoad"></script>
+    <script type="text/javascript">
+        btn.addEventListener('click', () => {
+            init(117,39)
+        });
+
+        function init(x = 116.39, y = 39.9){
+
+            var map = new AMap.Map('container', {
+                center:[x, y],
+                zoom: 11
+            });
+            var circle = new AMap.Circle({
+                center: new AMap.LngLat(x, y),  // 圆心位置
+                radius: 1000, // 圆半径
+                fillColor: 'rgba(1, 1, 1, .5)',   // 圆形填充颜色
+                strokeColor: '#fff', // 描边颜色
+                strokeWeight: 2, // 描边宽度
+            });
+
+            map.add(circle);
+        }
+        window.onLoad = init;
+    </script>
+</body>
+</html>
