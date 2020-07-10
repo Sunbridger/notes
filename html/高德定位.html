@@ -10,6 +10,7 @@
 </style>
 <body>
     <div id="container"></div>
+    <div id="addres"></div>
     <!-- <script src="https://webapi.amap.com/maps?v=1.4.11&key=630f641631116d89f801a59e462247c6&callback=onLoad"></script> -->
     <script type="text/javascript">
         function addJs(callback) {
@@ -20,22 +21,35 @@
             document.getElementsByTagName('head')[0].appendChild(script);
             window.onLoad = callback;
         }
+        var geolocation = null;
+        var geocoder = null;
         addJs(init);
         function init(x = 120.03488, y = 30.24444){
 
             AMap.plugin('AMap.Geolocation',function(){//异步加载插件
-                var geolocation = new AMap.Geolocation({
+                geolocation = new AMap.Geolocation({
                     enableHighAccuracy: true,
                     timeout: 800,
                     useNative: true,
                     zoomToAccuracy: true
                 });
-                geolocation.getCurrentPosition((status, result) => {
-                    console.log(status, result, '------');
-                });
-                map.addControl(geolocation);
-            });
 
+                map.addControl(geolocation);
+
+                // geolocation.getCurrentPosition((status, result) => {
+                //     console.log(result.formattedAddress);
+                //     if (status === 'complete') {
+                //         addres.innerText = `地址：${result.formattedAddress} \t 维度：${result.position.lng} ${result.position.lat}`;
+                //     }
+                // });
+            });
+            AMap.plugin('AMap.Geocoder', () => {
+                geocoder = new AMap.Geocoder({
+                    city: "010", //城市设为北京，默认：“全国”
+                    radius: 1000 //范围，默认：500
+                });
+                // map.addControl(geocoder);
+            })
 
             var map = new AMap.Map('container', {
                 center:[x, y],
@@ -107,20 +121,21 @@
             // map.add([marker1, marker2, marker3]);
 
             map.on('click', function(ev) {
+                const { lat, lng } = ev.lnglat;
 
-                map.remove([circle, circleMarker1, circleMarker2]);
+                map.remove([circle, circleMarker1]);
 
-                map.setZoomAndCenter(11, [120.00088, 30.24444]);
+                map.setZoomAndCenter(11, [lng, lat]);
 
-                new AMap.Marker({
+                circleMarker1 = new AMap.Marker({
                     map,
-                    position: new AMap.LngLat(120.00088, 30.24444),
-                    content: 'xxxxx',
-                    // offset: new AMap.Pixel(-90, -82)
+                    position: new AMap.LngLat(lng, lat),
+                    // content: 'ii',
+                    // offset: new AMap.Pixel(2, 2)
                 });
-                new AMap.Circle({
+                circle = new AMap.Circle({
                     map,
-                    center: new AMap.LngLat(120.00088, 30.24444),
+                    center: new AMap.LngLat(lng, lat),
                     radius: 3000,
                     strokeWeight: 1,
                     fillColor: 'rgba(110, 18, 205, 0.4)',
@@ -131,6 +146,11 @@
                     strokeOpacity: 0.6,
                     bubble: true
                 });
+                geocoder.getAddress([lng, lat], (status, result) => {
+                    console.log(result.regeocode.formattedAddress);
+                    addres.innerText = `地址：${result.regeocode.formattedAddress}
+                     维度：${lng} ${lat}`;
+                })
             });
         }
 
