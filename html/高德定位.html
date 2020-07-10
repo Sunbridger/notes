@@ -10,12 +10,8 @@
 </style>
 <body>
     <div id="container"></div>
-    <button id="btn">change</button>
     <!-- <script src="https://webapi.amap.com/maps?v=1.4.11&key=630f641631116d89f801a59e462247c6&callback=onLoad"></script> -->
     <script type="text/javascript">
-        btn.addEventListener('click', () => {
-            init(117,39)
-        });
         function addJs(callback) {
             var script = document.createElement('script');
             script.type = 'text/javascript';
@@ -111,18 +107,33 @@
             // map.add([marker1, marker2, marker3]);
 
             map.on('click', function(ev) {
-                // 触发事件的对象
-                var target = ev.target;
-                // 触发事件的地理坐标，AMap.LngLat 类型
-                var lnglat = ev.lnglat;
-                // 触发事件的像素坐标，AMap.Pixel 类型
-                var pixel = ev.pixel;
-                // 触发事件类型
-                var type = ev.type;
-                console.log(lnglat, pixel, type);
+
+                map.remove([circle, circleMarker1, circleMarker2]);
+
+                map.setZoomAndCenter(11, [120.00088, 30.24444]);
+
+                new AMap.Marker({
+                    map,
+                    position: new AMap.LngLat(120.00088, 30.24444),
+                    content: 'xxxxx',
+                    // offset: new AMap.Pixel(-90, -82)
+                });
+                new AMap.Circle({
+                    map,
+                    center: new AMap.LngLat(120.00088, 30.24444),
+                    radius: 3000,
+                    strokeWeight: 1,
+                    fillColor: 'rgba(110, 18, 205, 0.4)',
+                    strokeColor: '#3A9BFB',
+                    strokeStyle: 'dashed',
+                    strokeDasharray: [12, 8],
+                    fillOpacity: 0.2,
+                    strokeOpacity: 0.6,
+                    bubble: true
+                });
             });
         }
-        window.onLoad = init;
+
     </script>
 </body>
 </html>
