@@ -11,13 +11,35 @@
 <body>
     <div id="container"></div>
     <button id="btn">change</button>
-    <script src="https://webapi.amap.com/maps?v=1.4.11&key=630f641631116d89f801a59e462247c6&callback=onLoad"></script>
+    <!-- <script src="https://webapi.amap.com/maps?v=1.4.11&key=630f641631116d89f801a59e462247c6&callback=onLoad"></script> -->
     <script type="text/javascript">
         btn.addEventListener('click', () => {
             init(117,39)
         });
-
+        function addJs(callback) {
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.charset = 'utf-8';
+            script.src = 'https://webapi.amap.com/maps?v=1.4.8&key=7258bbb02b5e8ba16d75ed555a959630&callback=onLoad';
+            document.getElementsByTagName('head')[0].appendChild(script);
+            window.onLoad = callback;
+        }
+        addJs(init);
         function init(x = 120.03488, y = 30.24444){
+
+            AMap.plugin('AMap.Geolocation',function(){//异步加载插件
+                var geolocation = new AMap.Geolocation({
+                    enableHighAccuracy: true,
+                    timeout: 800,
+                    useNative: true,
+                    zoomToAccuracy: true
+                });
+                geolocation.getCurrentPosition((status, result) => {
+                    console.log(status, result, '------');
+                });
+                map.addControl(geolocation);
+            });
+
 
             var map = new AMap.Map('container', {
                 center:[x, y],
@@ -31,30 +53,62 @@
                 fillColor: 'rgba(1, 1, 1, .5)',   // 圆形填充颜色
                 strokeColor: '#fff', // 描边颜色
                 strokeWeight: 1, // 描边宽度
+                strokeStyle: 'dashed'
             });
+            // 判断是否点在3km之内
+            console.log(circle.contains({P: 30.24444, R: 120.03488, lng: 120.03488, lat: 30.23444}), '是否再远点');
             map.add(circle);
 
-            // 添加标记小圆点的
-            var marker1 = new AMap.Marker({
-                position: new AMap.LngLat(116.35,39.9),
-                offset: new AMap.Pixel(-10, -10),
-                icon: '//vdata.amap.com/icons/b18/1/2.png', // 添加 Icon 图标 URL
-                title: '北京'
-            });
-            var marker2 = new AMap.Marker({
-                position: new AMap.LngLat(116.34,39.9),
-                offset: new AMap.Pixel(-10, -10),
-                icon: '//vdata.amap.com/icons/b18/1/2.png', // 添加 Icon 图标 URL
-                title: '北京'
-            });
-            var marker3 = new AMap.Marker({
-                position: new AMap.LngLat(116.35,39.89),
-                offset: new AMap.Pixel(-10, -10),
-                icon: '//vdata.amap.com/icons/b18/1/2.png', // 添加 Icon 图标 URL
-                title: '北京'
-            });
 
-            map.add([marker1, marker2, marker3]);
+            var circleMarker1 = new AMap.CircleMarker({
+                center: [120.03488, 30.24444],
+                radius: 2,
+                strokeColor:'red',
+                // strokeWeight:2,
+                // strokeOpacity:0.5,
+                fillColor:'red',
+                // fillOpacity:0.5,
+                zIndex:10,
+                bubble:true,
+                cursor:'pointer',
+                clickable: true
+            });
+            circleMarker1.setMap(map);
+
+            var circleMarker2 = new AMap.CircleMarker({
+                center: [120.00018, 30.14444],
+                radius: 2,
+                strokeColor:'red',
+                // strokeWeight:2,
+                // strokeOpacity:0.5,
+                fillColor:'red',
+                // fillOpacity:0.5,
+                zIndex:10,
+                bubble:true,
+                cursor:'pointer',
+                clickable: true
+            });
+            circleMarker2.setMap(map);
+            // 添加标记小圆点的
+            // var marker1 = new AMap.CircleMarker({
+            //     center: new AMap.LngLat(116.35,39.9),
+            //     radius: 1
+            // });
+
+            // var marker2 = new AMap.CircleMarker({
+            //     position: new AMap.LngLat(116.34,39.9),
+            //     offset: new AMap.Pixel(-10, -10),
+            //     icon: '//vdata.amap.com/icons/b18/1/2.png', // 添加 Icon 图标 URL
+            //     title: '北京'
+            // });
+            // var marker3 = new AMap.CircleMarker({
+            //     position: new AMap.LngLat(116.35,39.89),
+            //     offset: new AMap.Pixel(-10, -10),
+            //     icon: '//vdata.amap.com/icons/b18/1/2.png', // 添加 Icon 图标 URL
+            //     title: '北京'
+            // });
+
+            // map.add([marker1, marker2, marker3]);
 
             map.on('click', function(ev) {
                 // 触发事件的对象
