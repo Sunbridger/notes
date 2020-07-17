@@ -8,27 +8,29 @@ const data = {
 }
 
 function walk(data) {
-    for (let key in data) {
-        const dep = []
-        let val = data[key]
-        // 如果 val 是对象，递归调用 walk 函数将其转为访问器属性
-        const nativeString = Object.prototype.toString.call(val)
-        if (nativeString === '[object Object]') {
-            walk(val)
-        }
-        Object.defineProperty(data, key, {
-            set(newVal) {
-                // 如果值没有变什么都不做
-                if (newVal === val) return
-                // 使用新值替换旧值
-                val = newVal
-                dep.forEach(fn => fn())
-            },
-            get() {
-                dep.push(Target)
-                return val  // 将该值返回
+    if (Object.prototype.toString.call(data) === '[object Object]') {
+        for (let key in data) {
+            const dep = []
+            let val = data[key]
+            // 如果 val 是对象，递归调用 walk 函数将其转为访问器属性
+            const nativeString = Object.prototype.toString.call(val)
+            if (nativeString === '[object Object]') {
+                walk(val)
             }
-        })
+            Object.defineProperty(data, key, {
+                set(newVal) {
+                    // 如果值没有变什么都不做
+                    if (newVal === val) return
+                    // 使用新值替换旧值
+                    val = walk(newVal)
+                    dep.forEach(fn => fn())
+                },
+                get() {
+                    dep.push(Target)
+                    return val  // 将该值返回
+                }
+            })
+        }
     }
 }
 
