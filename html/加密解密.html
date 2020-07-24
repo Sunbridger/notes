@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AES 对称加密与解密示例</title>
+    <style>
+      .block {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>阿宝哥：AES 对称加密与解密示例（CBC 模式）</h3>
+    <div style="display: flex;">
+      <div class="block">
+        <p>①明文加密 => <button onclick="encrypt()">加密</button></p>
+        <textarea id="plaintext" rows="5" cols="15"></textarea>
+      </div>
+      <div class="block">
+        <p>②密文解密 => <button onclick="decrypt()">解密</button></p>
+        <textarea id="ciphertext" rows="5" cols="15"></textarea>
+      </div>
+      <div class="block">
+        <p>③解密后的明文</p>
+        <textarea id="decryptedCiphertext" rows="5" cols="15"></textarea>
+      </div>
+    </div>
+    <!-- 引入 CDN Crypto.js AES加密 -->
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/4.0.0/enc-base64.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/4.0.0/cipher-core.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/4.0.0/aes.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/4.0.0/pad-pkcs7.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/4.0.0/enc-utf8.min.js"></script>
+    <!-- 引入 CDN Crypto.js 结束 -->
+    <script>
+      const key = CryptoJS.enc.Utf8.parse("0123456789abcdef"); // 密钥
+      const iv = CryptoJS.enc.Utf8.parse("abcdef0123456789"); // 初始向量
+      const plaintextEle = document.querySelector("#plaintext");
+      const ciphertextEle = document.querySelector("#ciphertext");
+      const decryptedCiphertextEle = document.querySelector(
+        "#decryptedCiphertext"
+      );
+
+      function encrypt() {
+        let plaintext = plaintextEle.value;
+        ciphertextEle.value = aesEncrypt(plaintext);
+      }
+
+      function decrypt() {
+        let ciphertext = ciphertextEle.value;
+        decryptedCiphertextEle.value = aesDecrypt(ciphertext).replace(/\"/g,'');
+      }
+
+      // AES加密
+      function aesEncrypt(content) {
+        let text = CryptoJS.enc.Utf8.parse(JSON.stringify(content));
+        let encrypted = CryptoJS.AES.encrypt(text, key, {
+          iv: iv,
+          mode: CryptoJS.mode.CBC,
+          padding: CryptoJS.pad.Pkcs7,
+        });
+        return encrypted.toString();
+      }
+
+      // AES解密
+      function aesDecrypt(content) {
+        let decrypt = CryptoJS.AES.decrypt(content, key, {
+          iv: iv,
+          mode: CryptoJS.mode.CBC,
+          padding: CryptoJS.pad.Pkcs7,
+        });
+        return decrypt.toString(CryptoJS.enc.Utf8);
+      }
+    </script>
+  </body>
+</html>
