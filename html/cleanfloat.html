@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://appx/web-view.min.js"></script>
 </head>
 <style>
     .clean {
@@ -14,7 +15,17 @@
     }
 </style>
 <body>
-    <div class="float">asdasda</div>
-    <div class="clean">asdasdas</div>
+    <div class="goback">goback</div>
+    <script>
+        const btn = document.querySelector('.goback');
+        let index = 0;
+        btn.addEventListener('click', () => {
+            console.log(my.navigateTo('/pages/index/index'), '---');
+            window.history.go(1)
+            index++;
+            btn.innerHTML = `点击${window.location.href} ${index}次`;
+            // window.location.href="alipays://platformapi/startapp?appId=2017062907600203&page=pages/index/index"
+        })
+    </script>
 </body>
 </html>
