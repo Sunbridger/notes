@@ -32,6 +32,7 @@
 * add ([e698a0a](https://github.com/Sunbridger/notes/commit/e698a0a9ff50998f3a22183776101b1f2343a604))
 * Add ([eca7d4a](https://github.com/Sunbridger/notes/commit/eca7d4ae53cc0f3a71b46492df791a70253602cf))
 * add  atest html ([d88e171](https://github.com/Sunbridger/notes/commit/d88e171235a422f1bc7bfb62dbac69627ff9be7d))
+* add chenglog ([ba038f6](https://github.com/Sunbridger/notes/commit/ba038f60c06bbbcc6ddd9721b7d8417d5d380f6b))
 * add compareversion ([962b7d6](https://github.com/Sunbridger/notes/commit/962b7d6e1a09683ebbbd6f011a8a3840ee4cebac))
 * add css ([d45db9c](https://github.com/Sunbridger/notes/commit/d45db9ca88a0655206b66300ce9ed931e9e20dc4))
 * add ifelse test ([98f77d0](https://github.com/Sunbridger/notes/commit/98f77d000d188dfe717671655b0507d7be824668))
