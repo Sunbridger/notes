@@ -4,13 +4,13 @@ const connection = mysql.createConnection({
   user     : 'root',
   port     : '3307',
   password : '123456',
-  database : 'dockertest'
+  database : 'maidian'
 });
 
 connection.connect();
 
-connection.query('SELECT * from stu', function (error, results, fields) {
+connection.query('SELECT * from user', function (error, results, fields) {
   if (error) throw error;
-  console.log(Array.isArray(results), results[0].name);
+  console.log(results[0]);
 });
 connection.end();
