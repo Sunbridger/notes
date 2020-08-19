@@ -15,6 +15,7 @@ let job = Schedule.scheduleJob('30 * * * * *', () => {
                         if (error) {
                             console.log(error, '---git push err');
                         }
+                        console.log('git push 完成');
                     })
                 })
             }
