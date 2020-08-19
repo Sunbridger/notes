@@ -3,11 +3,18 @@ const fs = require('fs');
 const path = require('path');
 const Schedule = require('node-schedule');
 const newList = [];
-const newversion = Math.random().toString(36).slice(-8);
+
+const upVersion = (version) => {
+    let arr = version.split('.');
+    let t = Number(arr[0]);
+    let m = Number(arr[1]);
+    let s = Number(arr[2]);
+    return `${t}.${m}.${s + 1}`;
+};
 
 // 启动任务
 let job = Schedule.scheduleJob('30 * * * * *', () => {
-    const handGIT = () => {
+    const handGIT = (newversion) => {
         exec('git add .', (err) => {
             if (!err) {
                 exec(`git commit -m "update: version:${newversion}"`, (err) => {
@@ -27,14 +34,12 @@ let job = Schedule.scheduleJob('30 * * * * *', () => {
             console.log(err, '读取package失败');
         } else {
             let obj = JSON.parse(data);
-            console.log(obj, '---data');
-            obj.version = newversion;
-            obj = JSON.stringify(obj);
-            fs.writeFile(path.resolve(__dirname, './testjson.json'), obj, 'utf8', (error, data) => {
+            obj.version = upVersion(obj.version);
+            fs.writeFile(path.resolve(__dirname, './testjson.json'), JSON.stringify(obj), 'utf8', (error, data) => {
                 if (error) {
                     console.log(err, '修改package失败');
                 } else {
-                    handGIT();
+                    handGIT(obj.version);
                 }
             });
         }
