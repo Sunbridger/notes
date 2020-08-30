@@ -2,7 +2,6 @@ const { exec } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 const Schedule = require('node-schedule');
-const newList = [];
 
 const upVersion = (version) => {
     let arr = version.split('.');
@@ -13,7 +12,7 @@ const upVersion = (version) => {
 };
 
 // 启动任务
-let job = Schedule.scheduleJob('30 * * * * *', () => {
+let job = Schedule.scheduleJob('12 13 23 * * *', () => {
     const handGIT = (newversion) => {
         exec('git add .', (err) => {
             if (!err) {
@@ -21,21 +20,23 @@ let job = Schedule.scheduleJob('30 * * * * *', () => {
                     exec('git push', (error) => {
                         if (error) {
                             console.log(error, '---git push err');
-                        }
-                        console.log('git push 完成');
+                        } else {
+			    exec('npm publish');
+			}
                     })
                 })
             }
         });
     }
 
-    fs.readFile(path.join(__dirname, './testjson.json'), 'utf8', (err, data) => {
+    fs.readFile(path.join(__dirname, './package.json'), 'utf8', (err, data) => {
         if (err) {
             console.log(err, '读取package失败');
         } else {
             let obj = JSON.parse(data);
+
             obj.version = upVersion(obj.version);
-            fs.writeFile(path.resolve(__dirname, './testjson.json'), JSON.stringify(obj), 'utf8', (error, data) => {
+            fs.writeFile(path.resolve(__dirname, './package.json'), JSON.stringify(obj), 'utf8', (error, data) => {
                 if (error) {
                     console.log(err, '修改package失败');
                 } else {
