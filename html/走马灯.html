@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .marquee p {
+        display: block;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        overflow: hidden;
+        word-wrap: nowrap;
+        -webkit-animation: marquee 5s linear infinite;
+        animation: marquee 5s linear infinite;
+    }
+    @keyframes marquee {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+</style>
+<body>
+    <div class="marquee">
+        <p>让我掉下眼泪的 不止昨夜的酒让我依依不舍的 不止你的温柔余路还要走多久 你攥着我的手</p>
+    </div>
+</body>
+</html>
