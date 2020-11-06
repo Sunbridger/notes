@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @media (prefers-color-scheme: dark) {
+        .day.dark-scheme   { background:  #333; color: red; }
+        .night.dark-scheme { background: black; color:  red; }
+    }
+
+    @media (prefers-color-scheme: light) {
+        .day.light-scheme   { background: white; color:  blue; }
+        .night.light-scheme { background:  #eee; color: blue; }
+    }
+    .day, .night {
+        display: inline-block;
+        padding: 1em;
+        width: 7em;
+        height: 2em;
+        vertical-align: middle;
+    }
+
+</style>
+<body>
+    <div class="day">Day (initial)</div>
+    <div class="day light-scheme">Day (changes in light scheme)</div>
+    <div class="day dark-scheme">Day (changes in dark scheme)</div> <br>
+
+    <div class="night">Night (initial)</div>
+    <div class="night light-scheme">Night (changes in light scheme)</div>
+    <div class="night dark-scheme">Night (changes in dark scheme)</div>
+</body>
+</html>
