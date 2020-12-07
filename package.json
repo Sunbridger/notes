@@ -61,8 +61,5 @@
   "bugs": {
     "url": "https://github.com/Sunbridger/notes/issues"
   },
-  "homepage": "https://github.com/Sunbridger/notes#readme",
-  "gitHooks": {
-    "pre-commit": "echo 1"
-  }
+  "homepage": "https://github.com/Sunbridger/notes#readme"
 }
