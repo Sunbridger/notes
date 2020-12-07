@@ -16,3 +16,4 @@ let obj2 = {
     a: ''
 };
 console.log(obj2);
+Math.abs('asd')
