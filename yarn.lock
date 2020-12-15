@@ -474,6 +474,19 @@
     core-js "^3.4.1"
     regenerator-runtime "^0.13.3"
 
+"@marp-team/marpit@^1.6.3":
+  version "1.6.3"
+  resolved "https://registry.npmjs.org/@marp-team/marpit/-/marpit-1.6.3.tgz#6402078b711298d23a475060e611ad399e2283a6"
+  integrity sha512-sfz+I2zo2KQ9hSn7p7NVJ5DeOe2cSk62EWxWciIo5mDnou5PgWpFuI7hGfuxn/pPfqvBZPsS7eU8HIwhxAXxjA==
+  dependencies:
+    color-string "^1.5.4"
+    cssesc "^3.0.0"
+    js-yaml "^3.14.0"
+    lodash.kebabcase "^4.1.1"
+    markdown-it "^12.0.2"
+    markdown-it-front-matter "^0.2.3"
+    postcss "^7.0.32"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "http://registry.npm.souche-inc.com/@mrmlnc/readdir-enhanced/download/@mrmlnc/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -1119,6 +1132,11 @@ argparse@^1.0.7:
   integrity sha1-vNZ5HqWuCXJeF+WtmIE0zUCz2RE=
   dependencies:
     sprintf-js "~1.0.2"
+
+argparse@^2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.souche-inc.com/argparse/download/argparse-2.0.1.tgz#246f50f3ca78a3240f6c997e8a9bd1eac49e4b38"
+  integrity sha1-JG9Q88p4oyQPbJl+ipvR6sSeSzg=
 
 arr-diff@^2.0.0:
   version "2.0.0"
@@ -2584,6 +2602,14 @@ color-string@^1.5.2:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
+color-string@^1.5.4:
+  version "1.5.4"
+  resolved "http://registry.npm.souche-inc.com/color-string/download/color-string-1.5.4.tgz#dd51cd25cfee953d138fe4002372cc3d0e504cb6"
+  integrity sha1-3VHNJc/ulT0Tj+QAI3LMPQ5QTLY=
+  dependencies:
+    color-name "^1.0.0"
+    simple-swizzle "^0.2.2"
+
 color@3.0.x:
   version "3.0.0"
   resolved "http://registry.npm.souche-inc.com/color/download/color-3.0.0.tgz#d920b4328d534a3ac8295d68f7bd4ba6c427be9a"
@@ -3038,6 +3064,11 @@ css-what@2.1:
   version "2.1.3"
   resolved "http://registry.npm.souche-inc.com/css-what/download/css-what-2.1.3.tgz#a6d7604573365fe74686c3f311c56513d88285f2"
   integrity sha1-ptdgRXM2X+dGhsPzEcVlE9iChfI=
+
+cssesc@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.souche-inc.com/cssesc/download/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
+  integrity sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4=
 
 cuid@^2.1.8:
   version "2.1.8"
@@ -3656,6 +3687,11 @@ entities@^2.0.0:
   version "2.0.3"
   resolved "http://registry.npm.souche-inc.com/entities/download/entities-2.0.3.tgz#5c487e5742ab93c15abb5da22759b8590ec03b7f"
   integrity sha1-XEh+V0Krk8Fau12iJ1m4WQ7AO38=
+
+entities@~2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.souche-inc.com/entities/download/entities-2.1.0.tgz#992d3129cf7df6870b96c57858c249a120f8b8b5"
+  integrity sha1-mS0xKc999ocLlsV4WMJJoSD4uLU=
 
 env-variable@0.0.x:
   version "0.0.6"
@@ -5929,6 +5965,13 @@ lines-and-columns@^1.1.6:
   resolved "http://registry.npm.souche-inc.com/lines-and-columns/download/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+linkify-it@^3.0.1:
+  version "3.0.2"
+  resolved "http://registry.npm.souche-inc.com/linkify-it/download/linkify-it-3.0.2.tgz#f55eeb8bc1d3ae754049e124ab3bb56d97797fb8"
+  integrity sha1-9V7ri8HTrnVASeEkqzu1bZd5f7g=
+  dependencies:
+    uc.micro "^1.0.1"
+
 load-bmfont@^1.3.1, load-bmfont@^1.4.0:
   version "1.4.0"
   resolved "http://registry.npm.souche-inc.com/load-bmfont/download/load-bmfont-1.4.0.tgz#75f17070b14a8c785fe7f5bee2e6fd4f98093b6b"
@@ -6053,6 +6096,11 @@ lodash.isplainobject@^4.0.6:
   version "4.0.6"
   resolved "http://registry.npm.souche-inc.com/lodash.isplainobject/download/lodash.isplainobject-4.0.6.tgz#7c526a52d89b45c45cc690b88163be0497f550cb"
   integrity sha1-fFJqUtibRcRcxpC4gWO+BJf1UMs=
+
+lodash.kebabcase@^4.1.1:
+  version "4.1.1"
+  resolved "http://registry.npm.souche-inc.com/lodash.kebabcase/download/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
+  integrity sha1-hImxyw0p/4gZXM7KRI/21swpXDY=
 
 lodash.map@^4.4.0:
   version "4.6.0"
@@ -6244,6 +6292,22 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+markdown-it-front-matter@^0.2.3:
+  version "0.2.3"
+  resolved "http://registry.npm.souche-inc.com/markdown-it-front-matter/download/markdown-it-front-matter-0.2.3.tgz#d6fa0f4b362e02086dd4ce8219fadf3f4c9cfa37"
+  integrity sha1-1voPSzYuAght1M6CGfrfP0yc+jc=
+
+markdown-it@^12.0.2:
+  version "12.0.3"
+  resolved "http://registry.npm.souche-inc.com/markdown-it/download/markdown-it-12.0.3.tgz#8d1e47daf1d716d63610495eb93f6665573e4abe"
+  integrity sha1-jR5H2vHXFtY2EEleuT9mZVc+Sr4=
+  dependencies:
+    argparse "^2.0.1"
+    entities "~2.1.0"
+    linkify-it "^3.0.1"
+    mdurl "^1.0.1"
+    uc.micro "^1.0.5"
+
 "match-stream@>= 0.0.2 < 1":
   version "0.0.2"
   resolved "http://registry.npm.souche-inc.com/match-stream/download/match-stream-0.0.2.tgz#99eb050093b34dffade421b9ac0b410a9cfa17cf"
@@ -6265,6 +6329,11 @@ md5@^2.2.1:
     charenc "~0.0.1"
     crypt "~0.0.1"
     is-buffer "~1.1.1"
+
+mdurl@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.souche-inc.com/mdurl/download/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
+  integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -7471,6 +7540,15 @@ postcss@^7.0.2:
   version "7.0.32"
   resolved "http://registry.npm.souche-inc.com/postcss/download/postcss-7.0.32.tgz#4310d6ee347053da3433db2be492883d62cec59d"
   integrity sha1-QxDW7jRwU9o0M9sr5JKIPWLOxZ0=
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
+postcss@^7.0.32:
+  version "7.0.35"
+  resolved "http://registry.npm.souche-inc.com/postcss/download/postcss-7.0.35.tgz#d2be00b998f7f211d8a276974079f2e92b970e24"
+  integrity sha1-0r4AuZj38hHYonaXQHny6SuXDiQ=
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
@@ -9353,6 +9431,11 @@ ua-device@^0.1.10:
   version "0.1.10"
   resolved "https://registry.npmjs.org/ua-device/-/ua-device-0.1.10.tgz#7e1a1b305d51e114032467092081c1d6374a4dce"
   integrity sha1-fhobMF1R4RQDJGcJIIHB1jdKTc4=
+
+uc.micro@^1.0.1, uc.micro@^1.0.5:
+  version "1.0.6"
+  resolved "http://registry.npm.souche-inc.com/uc.micro/download/uc.micro-1.0.6.tgz#9c411a802a409a91fc6cf74081baba34b24499ac"
+  integrity sha1-nEEagCpAmpH8bPdAgbq6NLJEmaw=
 
 uglify-js@^3.1.4:
   version "3.10.1"
