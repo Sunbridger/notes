@@ -17,23 +17,29 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(l1, l2) {
 
-    const getVal = (l, arr) => {
-        if (l.val) {
-            arr.push(l1.val, arr);
-        }
-        if (l.next) {
-            getVal(l.next, arr);
-        }
-    }
-    let arr1 = [];
-    let arr2 = [];
-    getVal(l1, arr1);
-    getVal(l2, arr2);
-    arr1.reverse();
-    arr2.reverse();
-    const n = Number(arr1.toString()) + Number(arr2.toString());
-    return n;
-};
+
+
+var addTwoNumbers = function(l1, l2) {
+    let res = new ListNode(-1),
+    cur = res,
+    carry = 0;
+while(l1 !== null || l2 !== null){
+    //取到两个链表当前的数值
+    let num1 = l1 == null ? 0 : l1.val;
+    let num2 = l2 == null ? 0 : l2.val;
+    //求和
+    let sum = num1 + num2 + carry;
+    //对进位标志的验证
+    carry = sum >= 10 ? 1 : 0;
+    cur.next = new ListNode(sum % 10);
+    cur = cur.next;
+    l1 = l1 ? l1.next : l1;
+    l2 = l2 ? l2.next : l2;
+}
+if (carry === 1) {
+    cur.next = new ListNode(1);
+}
+return res.next;
+}
 // @lc code=end
