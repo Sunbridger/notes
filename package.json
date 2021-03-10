@@ -1,0 +1,66 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "@marp-team/marpit": "^1.6.3",
+    "@souche-vue/vue-cli-plugin-build-extend": "1.2.1",
+    "axios": "^0.19.0",
+    "bignumber.js": "^9.0.0",
+    "exec": "^0.2.1",
+    "express": "^4.17.1",
+    "koa": "^2.13.0",
+    "koa-router": "^9.1.0",
+    "lei-stream": "^1.4.2",
+    "lodash": "^4.17.15",
+    "mockjs": "^1.1.0",
+    "moment": "^2.24.0",
+    "mysql": "^2.18.1",
+    "nedb": "^1.8.0",
+    "nodemailer": "^6.4.2",
+    "qcloudsms_js": "^0.1.1",
+    "qrcode-terminal": "^0.12.0",
+    "redux": "^4.0.5",
+    "request": "^2.88.2",
+    "serverless": "^1.73.0",
+    "shelljs": "^0.8.3",
+    "svg-captcha": "^1.4.0",
+    "swiper": "^6.0.4",
+    "through": "^2.3.8",
+    "ua-device": "^0.1.10",
+    "unzip": "^0.1.11",
+    "url": "^0.11.0",
+    "vue-router": "^3.3.4",
+    "wechat4u": "^0.7.7",
+    "wechaty": "^0.38.4",
+    "yargs": "^14.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/generator": "^7.5.5",
+    "@babel/traverse": "^7.5.5",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "conventional-changelog-cli": "^2.0.34",
+    "cz-customizable": "^6.3.0",
+    "ejs": "^3.1.5",
+    "node-schedule": "^1.3.2"
+  },
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunbridger/notes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sunbridger/notes/issues"
+  },
+  "homepage": "https://github.com/Sunbridger/notes#readme"
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/driver.js/dist/driver.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/driver.js/dist/driver.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+    }
+    #app {
+        height: 30vh;
+        background-color: bisque;
+        font-size: 16px;
+    }
+</style>
+<body>
+    <div id="app"></div>
+    <script>
+        const driver = new Driver();
+        driver.highlight('#app');
+    </script>
+</body>
+</html>

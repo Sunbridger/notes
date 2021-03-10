@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://cdn.goeasy.io/goeasy-1.0.11.js"></script>
+</head>
+
+<body>
+    <script>
+        const goeasy = new GoEasy({
+            host: "hangzhou.goeasy.io",//应用所在的区域地址，杭州：hangzhou.goeasy.io，新加坡：singapore.goeasy.io
+            appkey: "BC-fed829ecadcc463b98dfa45476ca4c8f",//替换为您的应用appkey
+            onConnected: function() {
+                alert('连接成功！')
+            },
+            onDisconnected: function() {
+                alert('连接断开！')
+            },
+            onConnectFailed: function(error) {
+                alert('连接失败或错误！')
+            }
+        });
+        goeasy.publish({
+            channel: "test-room",
+            message: "Hello, GoEasy!" //替换为您想要发送的消息内容
+        });
+        goeasy.subscribe({
+            channel: "test-room",
+            onMessage: function (message) {
+                alert("Channel:" + message.channel + " content:" + message.content);
+            }
+        });
+    </script>
+</body>
+
+</html>

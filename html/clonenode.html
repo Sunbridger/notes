@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <title>clone_node</title>
+  <style>
+  .div1{
+    width: 200px;
+    height: 200px;
+    background-color: #ccc;
+  }
+  </style>
+</head>
+<body>  
+    <div class="div1">
+      asdasdasd aa='asda'
+      <p aa='asdas'>
+        asdasdasdp
+      </p>
+    </div>
+    <script>
+      // let newdiv = document.getElementsByClassName('div1')[0].cloneNode(true);
+      // document.getElementsByClassName('div1')[0].addEventListener('click',()=>{
+      //   alert(22)
+      // })
+      // let body = document.body;
+      // body.appendChild(newdiv);
+      let newdiv = document.getElementsByClassName('div1')[0].clone(true);
+      document.getElementsByClassName('div1')[0].addEventListener('click',()=>{
+        alert(22)
+      })
+      let body = document.body;
+      body.appendChild(newdiv);
+
+    </script>
+</body>
+</html>

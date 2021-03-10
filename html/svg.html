@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .one {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: ani 2s forwards;
+        }
+        .two {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: ani 1.8s forwards 0.2s;
+        }
+        .three {
+            stroke-dasharray: 600;
+            stroke-dashoffset: 600;
+            animation: ani 1.6s forwards 0.4s;
+        }
+        @keyframes ani {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg width="800" height="600">
+        <!-- one -->
+        <path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="one" stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="one"  stroke="#4A4A4A" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <!-- two -->
+        <path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="two" stroke="#029df9" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <!-- three -->
+        <path d="M149.593084,114.512754 C149.593084,80.6086232 265.458217,31.6263568 265.458217,144.647923 C265.458217,257.669489 149.593084,288.726563 149.593084,288.726563 L291.550902,288.726563" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M391.00506,81.6608912 C297.400634,81.6608912 275.086722,284.767558 384.426619,284.767558 C493.766517,284.767558 484.609487,81.6608912 391.00506,81.6608912 Z" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M508.720275,85.6448695 C519.572766,106.125165 510.370277,296.381449 510.370277,296.381449" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+        <path d="M570.187369,93.0436865 C570.187369,93.0436865 703.312123,69.0165013 703.312123,103.354018 C703.312123,137.691534 595.118196,304.797696 595.118196,304.797696" class="three" stroke="#90da32" stroke-width="8" fill="none" stroke-lineCap="round"></path>
+    </svg>
+    <svg>
+    <script>
+        var path = document.querySelector('path');
+        var length = path.getTotalLength();
+    </script>
+</body>
+</html>

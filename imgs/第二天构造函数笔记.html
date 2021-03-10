@@ -1,0 +1,299 @@
+<html>
+  <head>
+	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>i5ting_ztree_toc:笔记</title>
+		<link href="toc/style/github-bf51422f4bb36427d391e4b75a1daa083c2d840e.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/style/github2-d731afd4f624c99a4b19ad69f3083cd6d02b81d5.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="toc/css/zTreeStyle/zTreeStyle.css" media="all" rel="stylesheet" type="text/css"/>
+	  <style>
+		pre {
+		    counter-reset: line-numbering;
+		    border: solid 1px #d9d9d9;
+		    border-radius: 0;
+		    background: #fff;
+		    padding: 0;
+		    line-height: 23px;
+		    margin-bottom: 30px;
+		    white-space: pre;
+		    overflow-x: auto;
+		    word-break: inherit;
+		    word-wrap: inherit;
+		}
+
+		pre a::before {
+		  content: counter(line-numbering);
+		  counter-increment: line-numbering;
+		  padding-right: 1em; /* space after numbers */
+		  width: 25px;
+		  text-align: right;
+		  opacity: 0.7;
+		  display: inline-block;
+		  color: #aaa;
+		  background: #eee;
+		  margin-right: 16px;
+		  padding: 2px 10px;
+		  font-size: 13px;
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+
+		pre a:first-of-type::before {
+		  padding-top: 10px;
+		}
+
+		pre a:last-of-type::before {
+		  padding-bottom: 10px;
+		}
+
+		pre a:only-of-type::before {
+		  padding: 10px;
+		}
+
+		.highlight { background-color: #ffffcc } /* RIGHT */
+		</style>
+  </head>
+  <body>
+	  <div>
+				<div style='width:25%;'>
+						<ul id="tree" class="ztree" style='width:100%'>
+
+						</ul>
+				</div>
+        <div id='readme' style='width:70%;margin-left:20%;'>
+          	<article class='markdown-body'>
+            	<h1 id="-">作业</h1>
+<ol>
+<li>空对象<pre><code> var o = null;
+ // 空对象, 存特点是只有变量 o 没有对象数据
+</code></pre></li>
+</ol>
+<h1 id="-">值类型与引用类型的存储特征</h1>
+<ol>
+<li>内存逻辑结构( 画图 )</li>
+<li>赋值<pre><code> var num = 123;
+ var num2 = num;
+</code></pre><ul>
+<li>值类型赋值的存储特点, 将变量内的数据全部拷贝一份, 存储给新的变量.</li>
+<li><code>var num = 123</code> 表示变量中存储的数字是 123.</li>
+<li>然后将数据拷贝一份,就是将 123 拷贝一份. 那么内存中有 2 个 数组</li>
+<li>将拷贝数据赋值给 <code>num2</code></li>
+<li>其特点是在内存中有<strong>两个数据副本</strong>.</li>
+<li>练习: var o = { name: &#39;张三&#39; };, var obj = o;</li>
+</ul>
+</li>
+<li>引用类型的赋值<pre><code> var o = { name: &#39;张三&#39; };
+ var obj = o;
+</code></pre><ul>
+<li>赋值就是将 变量 o 中存储的数据拷贝一份, 然后将该数据赋值给 obj</li>
+<li>内存中有 1 分数据</li>
+<li>问题: 利用 obj 修改的 name 属性会影响到 o 中的 name</li>
+</ul>
+</li>
+</ol>
+<h1 id="-">深拷贝与浅拷贝</h1>
+<ol>
+<li>什么是深拷贝, 什么是浅拷贝<ul>
+<li>如果拷贝的时候, 将数据的所有引用结构都拷贝一份, 那么数据在内存中独立就是深拷贝</li>
+<li>如果拷贝的时候, 只针对当前对象的属性进行拷贝, 而属性是引用类型这个不考虑, 那么就是浅拷贝</li>
+<li>拷贝: 复制一份. 指将对象数据复制.</li>
+<li>在讨论深拷与浅拷的时候一定要保证对象的属性也是引用类型.</li>
+</ul>
+</li>
+<li>代码的封装<ul>
+<li>利用面向对象的思想, 一般会让对象带有一个 copy 的方法, 来完成自己的拷贝</li>
+<li>如果需要将一个对象封装成浅拷贝</li>
+<li>this 在函数( 方法 )内部, 表示调用该函数( 方法 )的对象.</li>
+</ul>
+</li>
+</ol>
+<h2 id="-">中午面试题</h2>
+<ol>
+<li>onload 与 jq 中 read 的区别</li>
+<li>类型转换( 在 js 中唯一一个 自己不等于自己的 就是 NaN )</li>
+</ol>
+<h1 id="-">对象的动态特性</h1>
+<ol>
+<li>在 js 中, 一格对象需要属性, 就可以 利用 <code>对象.属性名 = 值</code> 的方式 为其添加. 只要赋值成功, 对象就新增了属性.</li>
+<li>对象属性的访问形式<ul>
+<li>点语法: <code>o.name</code></li>
+<li>关联数组: <code>o[ name ]</code></li>
+</ul>
+</li>
+<li>曾经使用<pre><code>function mix( obj1, obj2 ) {
+ for ( var k in obj2 ) {
+     obj1[ k ] = obj2[ k ];
+ }
+}
+</code></pre></li>
+<li><p>凡是需要给对象动态添加成员的时候, 必须使用关联数组的语法</p>
+<pre><code> // 利用关联数组的语法, 访问其 name 属性, 调用其 sayHello 方法
+ var o = { 
+     name: &#39;张三&#39;, 
+     sayHello: function () {
+         console.log( &#39;你好, 我叫 &#39; + this.name );
+     }
+ };
+
+ // console.log( o.name );
+ console.log( o[ &#39;name&#39; ] );
+ // o.sayHello();
+ o[ &#39;sayHello&#39; ]();
+</code></pre></li>
+</ol>
+<h1 id="-">作为参数参数</h1>
+<ol>
+<li>作为函数的参数, 就是将 参数的数据拷贝一份 传递给函数的定义中的参数<pre><code> function foo( num ) {}
+ var a = 123;
+ foo( a );
+</code></pre><ul>
+<li>函数在调用的时候, 首先需要将参数中的数据拷贝一份. 即 数字 123 拷贝一份.</li>
+<li>跳转到函数的定义中( 函数体 ), 再次之前完成了 参数的赋值, 即 num = 123.</li>
+<li>正式的进入函数内, 准备执行函数中的每一句话.</li>
+</ul>
+</li>
+<li>值类型作为函数参数传递的特征, 函数内与函数外是两个不同的变量, 仅仅是值相等而已.</li>
+<li>引用类型作为函数参数传递的特征, 函数内与函数外是两个不同的变量, 但是指向同一个对象.<ul>
+<li>因此在函数内部允许修改函数外部的对象的数据</li>
+</ul>
+</li>
+</ol>
+<h1 id="-">构造函数的作用</h1>
+<h2 id="-">构造函数是干什么用的</h2>
+<ol>
+<li>初始化数据的</li>
+<li>在 js 给对象添加属性用的, 初始化属性值用</li>
+</ol>
+<h2 id="-">创建对象的过程</h2>
+<ol>
+<li>代码: <code>var p = new Person();</code>.</li>
+<li>首先运算符 new 创建了一个对象. 它类似于 <code>{}</code>, 是一个&#39;没有任何成员&#39;的对象.<ul>
+<li>使用 new 创建对象, 对象的类型就是创建它的构造函数名.</li>
+<li>使用 {} 无论如何都是 Object 类型, 相当于 <code>new Object</code>.</li>
+</ul>
+</li>
+<li>然后调用构造函数 为其初始化成员<ul>
+<li>构造函数在调用的一开始, 有一个赋值操作, 即 this = 刚刚创建出来的对象.</li>
+<li>因此在构造函数中 this 表示刚刚创建出来的对象.</li>
+</ul>
+</li>
+<li>在构造函数中 利用 对象的 动态特性 为对象添加成员.</li>
+</ol>
+<h3 id="-">作业:</h3>
+<pre><code>    function Person( name, age, gender ) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+    var p = new Person( &#39;张三&#39;, 19, &#39;男&#39; );
+</code></pre><h1 id="-">异常</h1>
+<h2 id="-">异常的概念</h2>
+<p>异常就是程序在运行过程中出现的错误. </p>
+<p>在 js 中出现异常后, 浏览器会给出一段错误码, 就是错误消息. 错误消息由错误类型与错误信息构成</p>
+<h2 id="-">如何处理异常</h2>
+<p>就是要出现异常后还能继续执行. 异常最大的特征是 一旦代码出现异常其后的代码就不再执行.</p>
+<p>常见的异常有两大类:</p>
+<ol>
+<li>运行环境的多样性</li>
+<li>语法错误, 代码错误</li>
+</ol>
+<h3 id="try-catch-">try-catch 语法</h3>
+<p>即尝试这么做, 如果出现错误捕获错误</p>
+<pre><code>...
+try {
+    可能出现错误的代码
+} catch( e ) {
+    处理错误的代码
+}
+...
+</code></pre><ol>
+<li>代码正常运行, 如果在 try 中出现了错误, try 里面出现错误的语句后面的代码都不再执行, 直接跳转到 catch 中</li>
+<li>catch 中处理错误信息</li>
+<li>然后继续执行后面的代码</li>
+<li>如果 try 中没有出现错误, 那么不走 catch 直接执行后面的代码</li>
+</ol>
+<h2 id="-">如何抛出异常</h2>
+<pre><code>throw 对象
+</code></pre><ol>
+<li>throw 是抛出异常的语法, 其后跟一个对象, 即错误消息对象</li>
+<li>一般该对象使用 <code>new Error( &#39;错误消息&#39; )</code> 来创建. 也支持任意的对象.</li>
+</ol>
+<pre><code>function showMessage ( msg ) {
+    // 要显示一段文本, 所以我做一个限制
+    if ( typeof msg !== &#39;string&#39; ) {
+        throw new Error( &#39;传入的参数不是一个字符串&#39; );
+    }
+    // 是正常的
+    console.log( msg );
+}
+</code></pre><h2 id="-">补充</h2>
+<ol>
+<li>try-catch 语法的最终结构是 try-catch-finally<pre><code> try {
+     可能出现错误的代码
+ } catch ( e ) {
+     如果出现错误就执行
+ } finally {
+     结束 try 这个代码块之前执行, 即最后执行
+ }
+</code></pre></li>
+<li>层级传递<pre><code> function f1 () {
+     f2();                // f1 称为调用者, 或调用函数, f2 称为被调用者, 或被调用函数
+ }
+ function f2 () {
+     f3();
+ }
+ function f3() {
+     throw new Error( &#39;error&#39; );
+ }
+ f1();
+</code></pre></li>
+</ol>
+<h1 id="dom-">dom 操作</h1>
+<h2 id="-dom-">绘制 DOM 树</h2>
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;测试&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- 测试 --&gt;
+        &lt;div&gt;
+            你好我是一个 &lt;span style=&quot;color: red&quot;&gt;div&lt;/span&gt; 标签&lt;/div&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="-dom-">任何一个 DOM 树结构的结论</h2>
+<ol>
+<li>所谓的 DOM 操作, 操作的是什么?</li>
+<li>一般DOM树结构<pre><code> 父节点
+     兄弟节点
+     当前节点
+         属性节点
+         子节点
+     兄弟节点
+</code></pre></li>
+</ol>
+
+          	</article>
+        </div>
+		</div>
+  </body>
+</html>
+<script type="text/javascript" src="toc/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="toc/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript" src="toc/js/ztree_toc.js"></script>
+<script type="text/javascript" src="toc_conf.js"></script>
+
+<SCRIPT type="text/javascript" >
+<!--
+$(document).ready(function(){
+    var css_conf = eval(markdown_panel_style);
+    $('#readme').css(css_conf)
+    
+    var conf = eval(jquery_ztree_toc_opts);
+		$('#tree').ztree_toc(conf);
+});
+//-->
+</SCRIPT>

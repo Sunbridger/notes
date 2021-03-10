@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        height: 1200px;
+    }
+    #example {
+        width: 100px;
+        height: 200px;
+        background-color: red;
+    }
+</style>
+<body>
+    <id id="example"></id>
+    <script>
+        function query(selector) {
+            return Array.from(document.querySelectorAll(selector));
+        }
+
+        var observer = new IntersectionObserver(
+            function(changes) {
+                changes.forEach(function(change) {
+                var container = change.target;
+                var content = container.querySelector('template').content;
+                container.appendChild(content);
+                observer.unobserve(container);
+                });
+            }
+        );
+
+        query('.lazy-loaded').forEach(function (item) {
+            observer.observe(item);
+        });
+        // var io = new IntersectionObserver((e) => {
+        //     console.log('变化', e.target);
+        // });
+        // // 开始观察
+        // io.observe(document.getElementById('example'));
+
+        // 停止观察
+        // io.unobserve(element);
+
+        // // 关闭观察器
+        // io.disconnect();
+    </script>
+</body>
+</html>

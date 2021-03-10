@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.dingxiang-inc.com/ctu-group/captcha-ui/index.js"></script>
+</head>
+<style>
+    #c1 {
+        margin: auto;
+    }
+</style>
+<body>
+    <div id="c1"></div>
+    <script>
+        var myCaptcha = _dx.Captcha(document.getElementById('c1'), {
+            appId: '53f2693ebed30ebbd2966172ae30d322', //appId，在控制台中“应用管理”或“应用配置”模块获取
+            success: () => {
+                alert('恭喜验证成功');
+            }
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id='myCanvas'></canvas>
+    <div>
+        请输入文案：<input type="text" id="inp">
+        <button id="btn">保存该图片</button>
+    </div>
+
+    <script>
+
+        inp.addEventListener('input', () => {
+            changeToCanvas(inp.value);
+        });
+
+        btn.addEventListener('click', () => {
+            const url = c.toDataURL("image/png");
+            console.log(url ,'将此传给后台保存即可');
+        });
+
+        const changeToCanvas = (text) => {
+            c.width = img.width;
+            c.height = img.height;
+            const ctx = c.getContext('2d');
+            ctx.fillRect(0, 0, c.width, c.height);
+            ctx.drawImage(img, 0, 0);
+            // 参考 https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial/Drawing_text
+            if (typeof text === 'string') {
+                ctx.font = '51px serif';
+                ctx.fillStyle= 'red';
+                ctx.fillText(text, 140, 50);
+            }
+        };
+
+        const img = new Image();
+        const c = document.getElementById('myCanvas');
+        img.src = 'https://p.ssl.qhimg.com/sdm/364_207_/t016f2d675f13664fe7.jpg';
+        img.setAttribute("crossOrigin",'Anonymous');
+        img.onload = changeToCanvas;
+    </script>
+</body>
+</html>

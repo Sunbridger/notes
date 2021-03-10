@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <iframe src="https://tech.meituan.com/2018/10/11/fe-security-csrf.html"></iframe>
+    奥术大师大所大asasdasd
+    <script>
+        var i = document.querySelector('iframe')
+        i.onload= function(){//这是异步加载的iframe
+            i.src += '#aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
+        }
+    </script>
+</body>
+</html>

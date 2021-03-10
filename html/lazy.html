@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <ul>        
+      <li data-src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01N203pHTU7/Wr5314kcLAtVCi.jpg!t"><i></i></li>
+      <li data-src="http://77fkxu.com1.z0.glb.clouddn.com/20160308/1457402219_73571.jpg"><i></i></li>
+      <li data-src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p01a3SXHo2hZ/XYAC5TLk4uYWXn.jpg!t"><i></i></li>
+      <li data-src="http://pic1.cxtuku.com/00/16/18/b3809a2ba0f3.jpg"><i></i></li>
+      <li data-src="http://img.bitscn.com/upimg/allimg/c150708/14363B06253120-6060O.jpg"><i></i></li>
+      <li data-src="http://pic.58pic.com/58pic/17/18/97/01U58PIC4Xr_1024.jpg"><i></i></li>
+      <li data-src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p015trgKM7vw/H0iyDPPneOVrA4.jpg!t"><i></i></li>
+      <li data-src="http://77fkxu.com1.z0.glb.clouddn.com/20160308/1457402219_73571.jpg"><i></i></li>
+      <li data-src="http://imgsrc.baidu.com/baike/pic/item/2f9cbdcc5e0bcf5c00e9283b.jpg"><i></i></li>
+      <li data-src="http://pic1.cxtuku.com/00/16/18/b3809a2ba0f3.jpg"><i></i></li>
+      <li data-src="http://img.bitscn.com/upimg/allimg/c150708/14363B06253120-6060O.jpg"><i></i></li>
+      <li data-src="http://pic.58pic.com/58pic/17/18/97/01U58PIC4Xr_1024.jpg"><i></i></li>
+      <li data-src="http://cover.read.duokan.com/mfsv2/download/fdsc3/p015trgKM7vw/H0iyDPPneOVrA4.jpg!t"><i></i></li>
+      <li data-src="http://77fkxu.com1.z0.glb.clouddn.com/20160308/1457402219_73571.jpg"><i></i></li>
+      <li data-src="http://imgsrc.baidu.com/baike/pic/item/2f9cbdcc5e0bcf5c00e9283b.jpg"><i></i></li>
+      <li data-src="http://pic1.cxtuku.com/00/16/18/b3809a2ba0f3.jpg"><i></i></li>
+      <li data-src="http://img.bitscn.com/upimg/allimg/c150708/14363B06253120-6060O.jpg"><i></i></li>
+    </ul>
+    <script>
+      var oUl = document.getElementsByTagName('ul')[0];
+      var aLi = oUl.getElementsByTagName('li');
+      /* 创建img标签函数 */    
+      function createImg(obj){   
+          var src = '';    
+          if(obj.dataset.src){
+              src = obj.dataset.src;
+          }else{
+              src = obj.getAttribute('data-src');
+          }    
+          if(obj.children.length <= 1){        
+              var img = document.createElement('img');
+              img.src = src;
+              obj.appendChild(img);
+          }
+      }
+      window.onscroll=()=>{
+        let hei = document.documentElement.clientWidth || document.body.clientWidth;
+        for (let i=0;i<aLi.length;i++){
+          
+        }
+      };
+      // console.log(DOM元素对象.offsetTop-document.documentElement.scrollTop,'页面元素距离浏览器工作区顶端的距离 ') 
+      window.onload = function(){    
+          window.onscroll();
+      }
+    </script>
+</body>
+</html>

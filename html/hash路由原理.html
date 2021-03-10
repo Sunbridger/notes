@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/router.css">
+    <script src="./js/router.js"></script>
+    <style>
+header,footer{
+        height:5em;
+        background: #cba;
+        text-align: center;
+        line-height: 5em;
+    }
+    nav{
+        width:20%;
+        height:30em;
+        background: #391;
+        float:left;
+    }
+    li{
+        height:2em;
+    }
+
+    section{
+        width:80%;
+        background: #9a1;
+        height:30em;
+        float:right;
+        line-height: 2em;
+        text-align: center;
+    }
+    .clear{
+        clear:both;
+    }
+    </style>
+
+</head>
+<body>
+    <header>这里是头部</header>
+    <nav>
+        <li><a href="#/">你是</a>  </li>
+        <li><a href="#/01">阿斯达萨达</a> </li>
+        <li> <a href="#/02">任天野</a> </li>
+        <li> <a href="#/03">持续性</a> </li>
+        <li><a href="#/04">婆婆</a> </li>
+        <li><a href="#/05">王贝贝</a> </li>
+    </nav>
+    <section>
+        如果想看路由改变效果，请点击左边的链接
+    </section>
+    <div class="clear"></div>
+    <footer>这里是尾部</footer>
+
+<script>
+    window.onload = function(){
+    (function(){
+        var Router=function(){
+            this.routes={};
+            this.curUrl='/';
+        };
+        Router.prototype.init= function(){
+            // 这里的两个this 是不一样的，需要注意
+            window.addEventListener('hashchange',this.reloadPage.bind(this) );
+        };
+        Router.prototype.reloadPage = function(){
+            this.curUrl = location.hash.substring(1)||'/'; //从#开始切分
+            this.routes[this.curUrl]();
+        };
+        Router.prototype.match = function(key,callback){
+            this.routes[key] = callback;
+        }
+        window.Router = Router;
+        })();
+
+        var ORouter = new Router();
+        ORouter.init();
+        ORouter.match('/',function(){
+            var Osect = document.querySelector('section');
+            Osect.innerHTML = "欢迎来到火星，这是一次非常的旅行，祝您路途愉快！";
+        });
+         ORouter.match('/01',function(){
+            var Osect = document.querySelector('section');
+            Osect.innerHTML = "啥阿萨德大厦啥阿萨德大厦啥阿萨德大厦啥阿萨德大厦";
+        });
+         ORouter.match('/02',function(){
+            var Osect = document.querySelector('section');
+            Osect.innerHTML = "额外额外额外额外额外额外额外";
+        });
+         ORouter.match('/03',function(){
+            var Osect = document.querySelector('section');
+            Osect.innerHTML = "东看看的东看看的东看看的东看看的东看看的";
+        });
+         ORouter.match('/04',function(){
+            var Osect = document.querySelector('section');
+            Osect.innerHTML = "东看看的东看看的东看看的";
+        });
+        ORouter.match('/05',function(){
+            var Osect = document.querySelector('section');
+            Osect.innerHTML = "一用于于不顾一用于于不顾一用于于不顾";
+        });
+    }
+</script>
+</body>
+</html>

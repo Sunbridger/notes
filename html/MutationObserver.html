@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MutationObserver</title>
+</head>
+<body>
+    <div>
+        <p id="look">loook</p>
+        <button id="btn">添加</button>
+    </div>
+    <script>
+        const mutationObserver = new MutationObserver(arrs => {
+            console.log(arrs, 'arrs');
+        });
+        const btn = document.querySelector('#btn');
+        const look = document.querySelector('#look');
+        btn.onclick = () => {
+            look.style.color = `rgb(1,1,${Math.random()})`;
+        };
+        mutationObserver.observe(look, {
+            attributes: true,
+            characterData: true,
+            childList: true,
+            subtree: true,
+            attributeOldValue: true,
+            characterDataOldValue: true
+        });
+
+    </script>
+</body>
+</html>
