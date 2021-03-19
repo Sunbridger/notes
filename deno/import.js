@@ -1,4 +1,9 @@
-// deno的导入
+/*
+ * @Author: 七彩
+ * @Date: 2021-03-17 20:20:51
+ * @LastEditTime: 2021-03-18 19:58:55
+ * @Description: 演示deno的导入
+ */
 
 // 1. 本地导入
 import { add, multiply } from 'utils.js';
