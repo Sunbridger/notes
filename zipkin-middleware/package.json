@@ -1,0 +1,34 @@
+{
+  "name": "@zcy/zipkin-middleware",
+  "version": "1.0.1",
+  "description": "node微服务之全链路收集服务",
+  "author": {
+    "name": "wangriqiao",
+    "email": "wangriqiao@cai-inc.com"
+  },
+  "maintainers": [{
+    "name": "wangriqiao",
+    "email": "wangriqiao@cai-inc.com"
+  }],
+  "publishConfig": {
+    "registry": "http://mirrors-front.cai-inc.com"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "zipkin": "^0.22.0",
+    "zipkin-context-cls": "^0.22.0",
+    "zipkin-instrumentation-axiosjs": "^0.22.0",
+    "zipkin-instrumentation-express": "^0.22.0",
+    "zipkin-instrumentation-fetch": "^0.22.0",
+    "zipkin-instrumentation-koa": "^0.22.0",
+    "zipkin-instrumentation-request-promise": "^0.22.0",
+    "zipkin-transport-http": "^0.22.0",
+    "zipkin-transport-kafka": "^0.22.0",
+    "node-fetch": "^2.6.1"
+  },
+  "license": "ISC"
+}

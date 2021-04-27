@@ -9,9 +9,9 @@ app.get('/s1/api', (req, res) => {
 });
 
 app.get('/s1/gets2', (req, res) => {
-  myMiddleWareForZipKin.zipkinAxios.get('http://localhost:9999/s2/api')
-      .then(() => {
-        res.send(`${new Date().toString()} http://localhost:9999/s2/api 返回的信息`);
+  myMiddleWareForZipKin.get('http://localhost:9999/s2/api')
+      .then((response) => {
+        res.send(response);
       })
 
 });
