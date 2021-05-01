@@ -1,0 +1,26 @@
+{
+  "name": "nlp-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browserdist": "browserify ./index.js | terser --compress --mangle > ./bundle.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nlpjs/core": "^4.22.0",
+    "@nlpjs/lang-en-min": "^4.22.0",
+    "@nlpjs/lang-zh": "^4.22.0",
+    "@nlpjs/nlp": "^4.22.0",
+    "body-parser": "^1.19.0",
+    "browserify": "^17.0.0",
+    "express": "^4.17.1",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^10.0.0",
+    "terser": "^5.7.0"
+  }
+}

@@ -4,3 +4,4 @@ js/node_modules
 js/.idea
 test/
 CHANGELOG.md
+nlp-node/node_modules
