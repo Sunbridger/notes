@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/codemirror@5.40.0/lib/codemirror.css" />
+  <link rel="stylesheet" href="https://unpkg.com/codemirror@5.40.0/theme/material.css" />
+  <link rel="stylesheet" href="https://unpkg.com/codemirror@5.40.0/addon/lint/lint.css" />
+  <title>Document</title>
+  <style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  textarea {
+    width: 100%;
+    height: 100%;
+  }
+  </style>
+</head>
+<body>
+<textarea id="text">
+const a = 
+</textarea>
+</body>
+<script src="https://unpkg.com/jshint@2.9.6/dist/jshint.js"></script>
+<script src="https://unpkg.com/codemirror@5.40.0/lib/codemirror.js"></script>
+<script src="https://unpkg.com/codemirror@5.40.0/mode/javascript/javascript.js"></script>
+<script src="https://unpkg.com/codemirror@5.40.0/addon/lint/lint.js"></script>
+<script src="https://unpkg.com/codemirror@5.40.0/addon/lint/json-lint.js"></script>
+<script>
+  var myTextArea = document.getElementById('text');
+  var editor = CodeMirror.fromTextArea(myTextArea, {
+    lineNumbers: true,
+    mode: 'json',
+    theme: 'material',
+    lint: true
+  });
+  editor.on('change', () => {
+      try {
+          console.log(JSON.parse(editor.getValue()));
+      } catch (error) {
+          console.log('请输入json格式');
+      }
+  });
+</script>
+</html>

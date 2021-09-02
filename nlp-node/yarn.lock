@@ -716,6 +716,11 @@ es-to-primitive@^1.2.1:
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
 
+esbuild@^0.11.23:
+  version "0.11.23"
+  resolved "https://registry.nlark.com/esbuild/download/esbuild-0.11.23.tgz?cache=0&sync_timestamp=1621163231384&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fesbuild%2Fdownload%2Fesbuild-0.11.23.tgz#c42534f632e165120671d64db67883634333b4b8"
+  integrity sha1-xCU09jLhZRIGcdZNtniDY0MztLg=
+
 escape-html@^1.0.3, escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.npm.taobao.org/escape-html/download/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
