@@ -1,5 +1,5 @@
 const detail = {
-    // name: '往日桥',
+    // name: 'wangriqiao',
     age: 6,
 };
 
