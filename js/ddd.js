@@ -1,19 +1,11 @@
-let a = {
-    "auditResult":{
-        "code":1,
-        "scope":3,
-        "name":"同意",
-        "type":1
-    },
-    "aduitOrg":[
-        {
-            "taskDefineKey":"",
-            "workflowFrontCompOrgInfos":[
-                {"districtCode":"510199","districtName":"成都市本级","orgId":"147506775664640","orgName":"成都公共资源交易中心","operatorIds":[10007400011],"operatorNames":["成都公共资源交易中心"]
-            }
-        ]
-    }
-    ]
-}
+const detail = {
+    // name: '往日桥',
+    age: 6,
+};
 
-console.log(JSON.stringify(a));
+// const { name, age } = detail;
+
+const name = detail.name || {};
+const age = detail.age || {};
+
+console.log(name, age);
