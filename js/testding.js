@@ -1,26 +1,26 @@
-// const Bot = require('ding-bot-sdk');
+const Bot = require('ding-bot-sdk');
 
-// let access_token = '68f9e3e0971272fb874d9b6851877d70170b930192e42532e8eb15a735cdc993';
+// https://oapi.dingtalk.com/robot/send?access_token=8a347c38162df013478b7971586c760afcd0ca43e949b13afefe0c057c99103d
 
-// let secret = 'SECdb5113fee89bac8fccb52ebdfad6a372f8fc5dfe38c2c81a04f18790c3736e38';
+let access_token = '03dd8c0f4451660cb959650b99318c770726cb3c49a6c3c98ccd40e9e3bba242';
 
-// const bot = new Bot({
-//     access_token,
-//     secret,
-// });
+let secret = '';
 
-// bot.send({
-//     "msgtype": "text",
-//     "text": {
-//         "content": "文本测次 @13044914906 是不一样的烟火"
-//     },
-//     "at": {
-//         "atMobiles": [
-//             "13044914906"
-//         ], 
-//         "isAtAll": false
-//     }
-// })
+// https://oapi.dingtalk.com/robot/send?access_token=03dd8c0f4451660cb959650b99318c770726cb3c49a6c3c98ccd40e9e3bba242
+const bot = new Bot({
+    access_token,
+    secret,
+});
+
+bot.send({
+    "msgtype": "text",
+    "text": {
+        "content": "文本测次  是不一样的烟火"
+    },
+    "at": {
+        // "isAtAll": true
+    }
+})
 
 
 

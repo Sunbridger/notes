@@ -5,11 +5,11 @@ const toDingTalk = (text) => {
 	axios({
 		headers: {'Content-Type': 'application/json'},
 		method: 'post',
-		url: 'https://oapi.dingtalk.com/robot/send?access_token=b02d06b20782441338c85d43ca0c6fd6f0a404958906adfd570b66f3e475d37f',
+		url: 'https://oapi.dingtalk.com/robot/send?access_token=03dd8c0f4451660cb959650b99318c770726cb3c49a6c3c98ccd40e9e3bba242',
 		data: {
 			"msgtype": "text",
 			"text": {
-				"content": `${text}-来自埋点规范定时任务。`
+				"content": `${text}`
 			},
 			// "at": text.includes('@') ? {
 			// 	"atMobiles": atMobiles
