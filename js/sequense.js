@@ -50,7 +50,7 @@ class Sequence {
 
   seq.use((next) => {
     setTimeout(() => {
-        next && next({ name: 'xdxx'});
+        next && next({ name: 'xdxsx'});
     }, 200);
 });
 
