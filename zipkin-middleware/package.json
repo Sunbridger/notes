@@ -1,18 +1,7 @@
 {
-  "name": "@zcy/zipkin-middleware",
+  "name": "my-zipkin-middleware",
   "version": "1.0.1",
   "description": "node微服务之全链路收集服务",
-  "author": {
-    "name": "wangriqiao",
-    "email": "wangriqiao@cai-inc.com"
-  },
-  "maintainers": [{
-    "name": "wangriqiao",
-    "email": "wangriqiao@cai-inc.com"
-  }],
-  "publishConfig": {
-    "registry": "http://mirrors-front.cai-inc.com"
-  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
