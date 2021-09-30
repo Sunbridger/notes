@@ -1,0 +1,20 @@
+<body>
+    <script type="module">
+      import { createApp } from 'https://unpkg.com/petite-vue?module'
+      createApp({
+        count: 0,
+        increment() {
+          this.count++
+        },
+        decrement() {
+          this.count--
+        }
+      }).mount()
+    </script>
+
+    <div v-scope>
+      <button @click="decrement">-</button>
+      <span>{{ count }}</span>
+      <button @click="increment">+</button>
+    </div>
+  </body>
